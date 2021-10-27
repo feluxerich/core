@@ -1,16 +1,118 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #9ab1c7;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #aac4dd;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+  border-radius: 0px;
+}
+
+:root {
+  --color-button-text: #fff;
+
+  --color-accent: #0a84ff;
+  --color-accent-hover: #51a8ff;
+  --color-accent-disabled: #51a8ff;
+  --color-accent-glow: #00aaff10;
+
+  --color-primary-100: #fffefe;
+  --color-primary-200: #e5e5e5;
+  --color-primary-300: #93a6c0;
+  --color-primary-400: #ffffff33;
+  --color-primary-500: #29384c;
+  --color-primary-600: #1f2733;
+  --color-primary-700: #2d3b53;
+  --color-primary-800: #1e2838;
+  --color-primary-900: #141724;
+}
+
+h1,
+h2,
+h3,
+h4,
+p {
+  line-height: 1.6;
+}
+
+h1,
+h2,
+h3,
+h4,
+p.bold {
+  font-weight: 700;
+}
+
+h1 {
+  font-size: 3.85rem;
+}
+
+h2 {
+  font-size: 2.8rem;
+}
+
+h3 {
+  font-size: 2rem;
+}
+
+h4 {
+  font-size: 1.5rem;
+}
+
+p {
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.small {
+  font-size: 12px;
+}
+
+::selection {
+  background-color: var(--color-accent);
+  color: var(--color-primary-100);
+}
+
 html,
-body {
-  padding: 0;
+body,
+#__next {
+  background-color: var(--color-primary-900);
+  color: var(--color-primary-100);
+  font-size: 14px;
+  height: 100%;
+  width: 100%;
+  font-family: 'Helvetica', 'Helvetica Neue', 'Inter', Helvetica, Arial, sans-serif;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  padding: 0;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
+*:focus {
+  outline: 0;
+  box-shadow: none;
 }
 
-* {
-  box-sizing: border-box;
+#nprogress .bar {
+  background: var(--color-accent);
+}
+#nprogress .peg {
+  box-shadow: 0 0 10px var(--color-accent), 0 0 5px var(--color-accent);
+}
+
+#nprogress .spinner-icon {
+  border-top-color: var(--color-accent);
+  border-left-color: var(--color-accent);
+}
+
+.no-drag {
+  -webkit-user-drag: none !important;
 }
