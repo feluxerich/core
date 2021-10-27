@@ -1,5 +1,11 @@
 # Changelog
 
+## **[v1.2.0]**
+
+- Added folders
+- Added utils
+- Added model
+
 ## **[v1.1.0]**
 
 - Added Bug Report Template
@@ -9,7 +15,6 @@
 
 - Added packages
 - Added css to \_app
-- Added folders
 
 ## **[v1.0.2]**
 
