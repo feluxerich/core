@@ -1,0 +1,31 @@
+name: Core Project CD Workflow
+
+on:
+  workflow_run:
+    workflows:
+      - "Core Project CI Workflow"
+    branches:
+      - "main"
+    types:
+      - completed
+
+env:
+  IMAGE_NAME: feluxerich/core
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: SSH Server Deployment
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USERNAME }}
+          port: ${{ secrets.SSH_PORT }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          script: |
+            cd core-project
+            ./restart.sh

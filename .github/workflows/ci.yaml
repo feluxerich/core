@@ -1,0 +1,69 @@
+name: Core Project CI Workflow
+
+on:
+  push:
+    branches:
+      - "main"
+    tags:
+      - "v*"
+  pull_request:
+
+env:
+  NODE_VERSION: 14.x
+  DOCKER_PLATFORMS: linux/amd64 # ,linux/arm/v7,linux/arm64,linux/arm/v6
+  IMAGE_NAME: feluxerich/core
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+
+      - name: Install Dependencies
+        run: npm install
+
+      - name: Lint Next.js App
+        run: npm run lint
+
+  docker:
+    if: ${{ github.event_name != 'pull_request' }}
+    needs: [lint]
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Docker meta
+        id: docker_meta
+        uses: marcelcoding/ghaction-docker-meta@v1
+        with:
+          tag-edge: true
+          images: |
+            ghcr.io/${{ env.IMAGE_NAME }}
+          tag-semver: |
+            {{version}}
+            {{major}}.{{minor}}
+
+      - uses: docker/setup-qemu-action@v1
+      - uses: docker/setup-buildx-action@v1
+
+      - name: Login to GitHub Container Registry
+        uses: docker/login-action@v1
+        with:
+          registry: ghcr.io
+          username: ${{ github.repository_owner }}
+          password: ${{ github.token }}
+
+      - name: Build
+        uses: docker/build-push-action@v2
+        with:
+          platforms: ${{ env.DOCKER_PLATFORMS }}
+          push: true
+          tags: ${{ steps.docker_meta.outputs.tags }}
+          labels: ${{ steps.docker_meta.outputs.labels }}
