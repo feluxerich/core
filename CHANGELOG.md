@@ -1,5 +1,9 @@
 # Changelog
 
+## **[v1.2.1]**
+
+- Added Github Environment
+
 ## **[v1.2.0]**
 
 - Added folders
