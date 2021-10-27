@@ -16,10 +16,6 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
 
-    environment:
-      name: Production
-      url: https://core.fluxi.ml/
-
     steps:
       - uses: actions/checkout@v2
 
