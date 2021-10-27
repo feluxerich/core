@@ -28,6 +28,4 @@ jobs:
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
             cd core-project
-            docker-compose down
-            docker image remove ghcr.io/${{ env.IMAGE_NAME }}:${{ env.IMAGE_TAG }}
-            docker-compose up -d
+            ./restart.sh
