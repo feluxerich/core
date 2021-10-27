@@ -1,5 +1,10 @@
 # Changelog
 
+## **[v1.2.0]**
+
+- Added Bug Report Template
+- Added Feature Request Template
+
 ## **[v1.0.3]**
 
 - Added packages
