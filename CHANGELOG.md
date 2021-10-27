@@ -1,5 +1,11 @@
 # Changelog
 
+## **[1.3.0]**
+
+- SEO Stuff
+- Added Icons
+- PWA Preparation
+
 ## **[v1.2.2]**
 
 - Removed Github Environment
