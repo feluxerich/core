@@ -1,5 +1,11 @@
 # Changelog
 
+## **[v1.0.3]**
+
+- Added packages
+- Added css to \_app
+- Added folders
+
 ## **[v1.0.2]**
 
 - Fixing Dockerfile
