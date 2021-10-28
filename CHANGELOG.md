@@ -1,5 +1,10 @@
 # Changelog
 
+## **[v1.5.4]**
+
+- Added `verify`, `create`, `destroy` api route
+- Installed `bcrypt`
+
 ## **[v1.5.3]**
 
 - Added Caching Job to CI Workflow
