@@ -1,5 +1,9 @@
 # Changelog
 
+## **[v1.5.3]**
+
+- Added Caching Job to CI Workflow
+
 ## **[v1.5.2]**
 
 - Added `FIXME` to `_middleware.ts`
