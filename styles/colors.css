@@ -1,5 +1,5 @@
 :root {
-  --color-button-text: #fff;
+  --color-button-text: hsl(0, 0%, 100%);
 
   --color-accent: #0a84ff;
   --color-accent-hover: #51a8ff;
