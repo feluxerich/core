@@ -1,5 +1,9 @@
 # Changelog
 
+## **[1.4.1]**
+
+- Activated pwa
+
 ## **[1.4.0]**
 
 - Changed colors
