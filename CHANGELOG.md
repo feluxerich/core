@@ -1,5 +1,12 @@
 # Changelog
 
+## **[1.3.1]**
+
+- css split
+- installed additional packages
+- added tsconfig path stuff
+- added utils
+
 ## **[1.3.0]**
 
 - SEO Stuff

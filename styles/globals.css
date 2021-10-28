@@ -18,25 +18,6 @@
   border-radius: 0px;
 }
 
-:root {
-  --color-button-text: #fff;
-
-  --color-accent: #0a84ff;
-  --color-accent-hover: #51a8ff;
-  --color-accent-disabled: #51a8ff;
-  --color-accent-glow: #00aaff10;
-
-  --color-primary-100: #fffefe;
-  --color-primary-200: #e5e5e5;
-  --color-primary-300: #93a6c0;
-  --color-primary-400: #ffffff33;
-  --color-primary-500: #29384c;
-  --color-primary-600: #1f2733;
-  --color-primary-700: #2d3b53;
-  --color-primary-800: #1e2838;
-  --color-primary-900: #141724;
-}
-
 h1,
 h2,
 h3,

@@ -1,5 +1,3 @@
-import { isProduction } from './env';
-
 export class Console {
   constructor() {}
 

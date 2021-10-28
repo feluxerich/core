@@ -1,4 +1,4 @@
-import { isProduction } from './env';
+import { isProduction } from '@utils/constants/env';
 import cache from 'memory-cache';
 
 export const fetchWithCache = async (url: string, minutes: number = 30) => {
