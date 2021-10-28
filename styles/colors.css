@@ -6,13 +6,13 @@
   --color-accent-disabled: #51a8ff;
   --color-accent-glow: #00aaff10;
 
-  --color-primary-100: #fffefe;
-  --color-primary-200: #e5e5e5;
-  --color-primary-300: #93a6c0;
-  --color-primary-400: #ffffff33;
-  --color-primary-500: #29384c;
-  --color-primary-600: #1f2733;
-  --color-primary-700: #2d3b53;
-  --color-primary-800: #1e2838;
-  --color-primary-900: #141724;
+  --color-primary-100: hsl(0, 100%, 100%);
+  --color-primary-200: hsl(0, 0%, 90%);
+  --color-primary-300: hsl(240, 24%, 60%);
+  --color-primary-400: hsl(240, 24%, 50%);
+  --color-primary-500: hsl(240, 24%, 40%);
+  --color-primary-600: hsl(240, 24%, 30%);
+  --color-primary-700: hsl(240, 24%, 20%);
+  --color-primary-800: hsl(240, 24%, 10%);
+  --color-primary-900: hsl(240, 24%, 5%);
 }
