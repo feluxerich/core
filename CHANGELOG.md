@@ -1,5 +1,9 @@
 # Changelog
 
+## **[1.3.2]**
+
+- Added tracker.gg api route
+
 ## **[1.3.1]**
 
 - css split
