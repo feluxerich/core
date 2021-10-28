@@ -7,7 +7,10 @@ export function middleware(req: NextRequest) {
     return;
   }
 
-  if (req.cookies.jwt && checkJwtToken(req.cookies.jwt)) {
+  if (req.cookies.jwt) {
+    // && checkJwtToken(req.cookies.jwt)
+    // FIXME: Can't check JWT Token because `eval` is
+    // is not allowed in Middlewares
     return NextResponse.next();
   }
 

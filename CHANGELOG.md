@@ -1,5 +1,14 @@
 # Changelog
 
+## **[v1.5.2]**
+
+- Added `FIXME` to `_middleware.ts`
+- Partitially fixed middleware (`eval` not allowed)
+
+## **[v1.5.1]**
+
+- Fixed import error
+
 ## **[v1.5.0]**
 
 - Created Require Login Middleware
