@@ -1,5 +1,10 @@
 # Changelog
 
+## **[1.4.0]**
+
+- Changed colors
+- Added Sidebar
+
 ## **[1.3.2]**
 
 - Added tracker.gg api route
