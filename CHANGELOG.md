@@ -1,5 +1,9 @@
 # Changelog
 
+## **[v1.5.0]**
+
+- Created Require Login Middleware
+
 ## **[1.4.1]**
 
 - Activated pwa
