@@ -2,7 +2,7 @@ import { sidebar } from '@config/sidebar';
 import Link from 'next/link';
 import Image from 'next/image';
 import { SidebarItemProps } from '@Types/config';
-import { IoAlertOutline } from 'react-icons/io5';
+import * as icons from 'react-icons/io5';
 
 const Sidebar = () => {
   return (
@@ -19,31 +19,19 @@ const Sidebar = () => {
 
                 return (
                   <div className="w-full grid grid-cols-1 gap-3 mb-3 last:mb-0" key={i}>
-                    {(entries as any[]).map(({ icon: Icon, name, route, custom: Custom, external }: SidebarItemProps, i) => {
+                    {(entries as any[]).map(({ icon, name, route, custom: Custom, external }: SidebarItemProps, i) => {
                       if (Custom) return <Custom key={i} />;
-                      if (!Icon) Icon = IoAlertOutline;
-
-                      const children = (
-                        <div
-                          className="hover:bg-primary-700 rounded-15 grid place-items-center w-full cursor-pointer"
-                          style={{ aspectRatio: '1 / 1' }}
-                        >
-                          <Icon className="h-4 w-4" />
-                        </div>
-                      );
+                      const Icon = (icons as any)[icon as string] ? (icons as any)[icon as string] : icons.IoAlertOutline;
 
                       return (
-                        <>
-                          {external ? (
-                            <a href={route ? route : '/'} key={i}>
-                              {children}
-                            </a>
-                          ) : (
-                            <Link href={route ? route : '/'} passHref key={i}>
-                              {children}
-                            </Link>
-                          )}
-                        </>
+                        <Link href={(external ? `/embed/${encodeURIComponent(route as string)}` : route) as string} passHref key={i}>
+                          <div
+                            className="hover:bg-primary-700 rounded-15 grid place-items-center w-full cursor-pointer"
+                            style={{ aspectRatio: '1 / 1' }}
+                          >
+                            <Icon className="h-4 w-4" />
+                          </div>
+                        </Link>
                       );
                     })}
                   </div>
@@ -54,13 +42,15 @@ const Sidebar = () => {
         })}
       </div>
       <div className="w-full p-3" style={{ aspectRatio: '1 / 1', background: 'rgba(0,0,0, 0.25)' }}>
-        <div className="h-full grid place-items-center" style={{ aspectRatio: '1 / 1' }}>
+        <div className="h-full grid place-items-center relative" style={{ aspectRatio: '1 / 1' }}>
           <Image
-            src="https://cdn.discordapp.com/avatars/701400631662870609/ef22ead36fbb26869ab8b4086d77a0ab.png?size=256"
-            alt="%user% Avatar"
-            height="45px"
-            width="45px"
+            src="https://cdn.discordapp.com/avatars/701400631662870609/e04bd4df8c313ef12315ef69596e1328.png?size=256"
+            alt="<USER> Avatar"
+            objectFit="cover"
+            layout="fill"
             className="rounded"
+            quality={100}
+            priority={true}
           />
         </div>
       </div>
@@ -69,3 +59,5 @@ const Sidebar = () => {
 };
 
 export default Sidebar;
+
+// ugly code

@@ -1,5 +1,11 @@
 # Changelog
 
+## **[v1.6.0]**
+
+- bug fixes
+- added embed
+- deactivated babel
+
 ## **[v1.5.6]**
 
 - bug fixes

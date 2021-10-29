@@ -1,8 +1,7 @@
 import React, { ReactChild } from 'react';
-import { IconType } from 'react-icons/lib';
 
 interface SidebarItemProps {
-  icon?: IconType;
+  icon?: string;
   name?: string;
   route?: string;
   external?: boolean;
