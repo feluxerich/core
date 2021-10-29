@@ -1,5 +1,10 @@
 # Changelog
 
+## **[v1.6.2]**
+
+- Added API Routes for authentication because they were not pushed last time
+- Merged Main from m2vi
+
 ## **[v1.6.1]**
 
 - bug fix
