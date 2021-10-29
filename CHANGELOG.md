@@ -1,5 +1,11 @@
 # Changelog
 
+## **[v1.5.6]**
+
+- bug fixes
+- sidebar
+- api route
+
 ## **[v1.5.5]**
 
 - bug fixes
