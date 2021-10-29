@@ -3,7 +3,7 @@ import { loginRequired } from '@config/middleware';
 import { checkJwtToken } from '@utils/utils';
 
 export function middleware(req: NextRequest) {
-  if (!req.page.name || !loginRequired.includes(req.page.name)) {
+  if (!req.page.name || loginRequired.includes(req.page.name)) {
     return;
   }
 

@@ -1,5 +1,9 @@
 # Changelog
 
+## **[v1.5.5]**
+
+- bug fixes
+
 ## **[v1.5.4]**
 
 - Added `verify`, `create`, `destroy` api route

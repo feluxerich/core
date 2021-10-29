@@ -5,19 +5,19 @@ export class Console {
     console.log('%c[FETCH]', 'color: #07821d', { data: data, service }, ...props);
   }
 
-  info(name: string, ...props: any) {
+  info(name: any, ...props: any) {
     console.log('%c[INFO]', 'color: #0362fc', name, ...props);
   }
 
-  load(info: string, result: any, ...props: any) {
+  load(info: any, result: any, ...props: any) {
     console.log('%c[LOAD]', 'color: #fce303', info, { result }, ...props);
   }
 
-  error(message: string, error: any, ...props: any) {
+  error(message: any, error: any, ...props: any) {
     console.log('&c[ERROR]', 'color: #f54242', message, { error }, ...props);
   }
 
-  log(message: string, ...props: any) {
+  log(message: any, ...props: any) {
     console.log('%c[LOG]', 'color: #8c7086', message, ...props);
   }
 

@@ -10,4 +10,4 @@ const userSchema = new Schema(
   { strict: false, collection: 'user' },
 );
 
-export default mongoose.models.user || mongoose.model('user', userSchema);
+export default mongoose?.models?.user || mongoose.model('user', userSchema);
