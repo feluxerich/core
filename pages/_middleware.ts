@@ -3,11 +3,9 @@ import { loginRequired } from '@config/middleware';
 import { checkJwtToken } from '@utils/utils';
 
 export function middleware(req: NextRequest) {
-  if (!req.page.name || loginRequired.includes(req.page.name)) {
-    return;
-  }
+  if (!req.page.name || loginRequired.includes(req.page.name)) return;
 
-  if (req.cookies.jwt) {
+  if (true) {
     // && checkJwtToken(req.cookies.jwt)
     // FIXME: Can't check JWT Token because `eval` is
     // is not allowed in Middlewares
