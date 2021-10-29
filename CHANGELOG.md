@@ -1,5 +1,9 @@
 # Changelog
 
+## **[v1.6.4]**
+
+- Installed `sharp`
+
 ## **[v1.6.3]**
 
 - Installed `@types/bcrypt`
