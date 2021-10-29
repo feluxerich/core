@@ -7,6 +7,7 @@ export const connectToDatabase = async () => {
 
   await mongoose.connect(process.env.MONGODB_URL, {
     dbName: 'core',
+    autoIndex: true,
   });
 
   if (mongoose.connection) {

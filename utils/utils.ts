@@ -28,3 +28,9 @@ export const checkJwtToken = async (token: string) => {
 
   return user;
 };
+
+export const discordAvatar = async (discord: any) => {
+  const url = discord?.avatar?.url;
+
+  return url ? url : '<FALLBACK_AVATAR>';
+};

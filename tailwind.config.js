@@ -106,7 +106,7 @@ module.exports = {
     textColor: ({ after }) => after(['disabled']),
     extend: {
       borderWidth: ['last'],
-      margin: ['first'],
+      margin: ['first', "last"],
     },
   },
   plugins: [require('tailwind-scrollbar'), require('@tailwindcss/line-clamp'), require('@tailwindcss/forms')],

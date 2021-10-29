@@ -1,5 +1,25 @@
 # Changelog
 
+## **[v1.6.1]**
+
+- bug fix
+
+## **[v1.6.0]**
+
+- bug fixes
+- added embed
+- deactivated babel
+
+## **[v1.5.6]**
+
+- bug fixes
+- sidebar
+- api route
+
+## **[v1.5.5]**
+
+- bug fixes
+
 ## **[v1.5.4]**
 
 - Added `verify`, `create`, `destroy` api route
