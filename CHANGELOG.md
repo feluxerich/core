@@ -1,5 +1,9 @@
 # Changelog
 
+## **[v1.6.3]**
+
+- Installed `@types/bcrypt`
+
 ## **[v1.6.2]**
 
 - Added API Routes for authentication because they were not pushed last time
