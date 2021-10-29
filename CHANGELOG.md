@@ -1,5 +1,9 @@
 # Changelog
 
+## **[v1.6.1]**
+
+- bug fix
+
 ## **[v1.6.0]**
 
 - bug fixes
