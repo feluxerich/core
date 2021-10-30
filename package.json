@@ -11,7 +11,6 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@types/bcrypt": "^5.0.0",
     "bcrypt": "^5.0.1",
     "copy-to-clipboard": "^3.3.1",
     "crypto-js": "^4.1.1",
@@ -41,6 +40,7 @@
   "devDependencies": {
     "@tailwindcss/forms": "^0.3.4",
     "@tailwindcss/line-clamp": "^0.2.2",
+    "@types/bcrypt": "^5.0.0",
     "@types/crypto-js": "^4.0.2",
     "@types/js-cookie": "^3.0.0",
     "@types/jsonwebtoken": "^8.5.5",
