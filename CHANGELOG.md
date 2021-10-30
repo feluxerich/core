@@ -1,5 +1,9 @@
 # Changelog
 
+## **[v1.7.2]**
+
+- middleware fix
+
 ## **[v1.7.1]**
 
 - pushed fucking something
