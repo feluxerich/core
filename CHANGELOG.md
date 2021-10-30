@@ -1,5 +1,10 @@
 # Changelog
 
+## **[v1.8.0]**
+
+- Created better docs
+- permanently moved changelog
+
 ## **[v1.7.2]**
 
 - middleware fix
