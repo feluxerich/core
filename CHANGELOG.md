@@ -1,5 +1,9 @@
 # Changelog
 
+## **[v1.6.5]**
+
+- Embed bug fix stuff
+
 ## **[v1.6.4]**
 
 - Installed `sharp`
