@@ -1,18 +1,17 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { loginRequired } from '@config/middleware';
-import { checkJwtToken } from '@utils/utils';
+import { verifyAuth } from '@utils/utils';
 
-export function middleware(req: NextRequest) {
-  if (!req.page.name || !loginRequired.includes(req.page.name)) {
-    return;
+export async function middleware(req: NextRequest) {
+  if (!req.page.name || !loginRequired.includes(req.page.name)) return;
+
+  const [verified, error, jwt] = await verifyAuth(req);
+
+  if (!verified) {
+    return NextResponse.redirect('/login');
   }
 
-  if (req.cookies.jwt) {
-    // && checkJwtToken(req.cookies.jwt)
-    // FIXME: Can't check JWT Token because `eval` is
-    // is not allowed in Middlewares
-    return NextResponse.next();
-  }
+  console.log(jwt);
 
-  return NextResponse.redirect('/login');
+  return NextResponse.next();
 }

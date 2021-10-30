@@ -1,6 +1,5 @@
-import userSchema from '@models/userSchema';
-import { connectToDatabase } from '@utils/database';
-import jwt from 'jsonwebtoken';
+import jwt from '@tsndr/cloudflare-worker-jwt';
+import { NextRequest } from 'next/server';
 
 export const aspectRatio = (width: number, height: number) => {
   const r = gcd(width, height);
@@ -12,22 +11,28 @@ export const gcd = (a: number, b: number): number => {
   return b == 0 ? a : gcd(b, a % b);
 };
 
-export const checkJwtToken = async (token: string) => {
+interface UserJwtPayload {
+  jti: string;
+  iat: number;
+}
+
+export async function verifyAuth(req: NextRequest) {
+  const token = req.cookies.jwt;
+
   if (!token) {
-    return false;
+    return [false, 'Missing user token', null];
   }
 
-  await connectToDatabase();
-
-  const decoded = JSON.parse(jwt.verify(token, process.env.JWT_SECRET_KEY || 'please change me') as string);
-  var user = await userSchema.findOne({ username: decoded.username });
-
-  if (user.length == 0 || decoded.password_hash !== user.password_hash) {
-    return false;
+  try {
+    if (!(await jwt.verify(token, process.env.JWT_SECRET_KEY!))) {
+      return [false, 'Your token has expired.', null];
+    }
+  } catch (error) {
+    return [false, (error as any).message, null];
   }
 
-  return user;
-};
+  return [true, null, jwt.decode(token) as UserJwtPayload];
+}
 
 export const discordAvatar = async (discord: any) => {
   const url = discord?.avatar?.url;
