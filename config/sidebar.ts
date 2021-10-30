@@ -24,7 +24,7 @@ export const sidebar: SidebarProps = {
         {
           icon: 'IoLockClosedOutline',
           name: 'Password Generator',
-          route: 'http://pw.m2vi.me/',
+          route: 'https://pw.m2vi.me/',
           external: true,
         },
         {

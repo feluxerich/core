@@ -1,5 +1,10 @@
 # Changelog
 
+## **[v1.7.0]**
+
+- Added API route for run code
+- fixed embed bug (https required)
+
 ## **[v1.6.5]**
 
 - Embed bug fix stuff
