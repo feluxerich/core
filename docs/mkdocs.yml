@@ -1,0 +1,6 @@
+site_name: Core Project
+nav:
+  - Home: index.md
+  - Changelog:
+      - v1.8.0: "changelog/v1.8.0.md"
+theme: material
