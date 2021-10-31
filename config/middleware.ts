@@ -1,1 +1,1 @@
-export const loginRequired: String[] = ['/'];
+export const loginRequired: String[] = ['/', '/embed/[url]'];

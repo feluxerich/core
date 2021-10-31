@@ -1,6 +1,7 @@
 import { Button } from '@components/Button';
 import Full from '@components/Full';
 import { Input } from '@components/Input';
+import { useRouter } from 'next/dist/client/router';
 import { createRef, useState } from 'react';
 
 const Login = () => {
@@ -8,9 +9,12 @@ const Login = () => {
   const [errorPassword, setErrorPassword] = useState(false);
   const [swiggle1, setSwiggle1] = useState('');
   const [swiggle2, setSwiggl2] = useState('');
+  const [disabled, setDisabled] = useState(false);
 
   const usernameRef = createRef<HTMLInputElement>();
   const passwordRef = createRef<HTMLInputElement>();
+
+  const Router = useRouter();
 
   const handleSubmit = () => {
     if (!usernameRef.current || !passwordRef.current) return;
@@ -20,20 +24,20 @@ const Login = () => {
     const username = usernameRef.current.value;
     const password = passwordRef.current.value;
 
-    if (!(username.length < 1) || !username) {
-      setErrorUsername(true);
-      setSwiggle1('swiggle');
-      setTimeout(() => {
-        setSwiggle1('');
-      }, 400);
-    }
-    if (!(password.length < 1) || !password) {
-      setErrorPassword(true);
-      setSwiggl2('swiggle');
-      setTimeout(() => {
-        setSwiggl2('');
-      }, 400);
-    }
+    setDisabled(true);
+    fetch(`/api/auth/create?username=${username}&password=${password}`)
+      .then(res => res.json())
+      .then(res => {
+        if (res.error) {
+          console.log(res.error);
+          setErrorUsername(true);
+          setErrorPassword(true);
+        } else {
+          Router.push('/');
+        }
+
+        setDisabled(false);
+      });
   };
 
   return (
@@ -47,6 +51,7 @@ const Login = () => {
             type="text"
             className={`mb-4 ${swiggle1}`}
             error={errorUsername}
+            disabled={disabled}
           />
           <Input
             onChange={() => setErrorPassword(false)}
@@ -55,6 +60,7 @@ const Login = () => {
             type="password"
             className={`mb-4 ${swiggle2}`}
             error={errorPassword}
+            disabled={disabled}
           />
         </div>
         <Button className="w-full" onClick={handleSubmit}>

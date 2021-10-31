@@ -1,5 +1,9 @@
 # Changelog
 
+## **[v1.9.0]**
+
+- Added login system
+
 ## **[v1.8.0]**
 
 - Created better docs

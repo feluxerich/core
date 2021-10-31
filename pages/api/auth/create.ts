@@ -1,8 +1,8 @@
-import userSchema from '@models/userSchema';
-import { connectToDatabase } from '@utils/database';
 import type { NextApiRequest, NextApiResponse } from 'next';
 import { compare } from 'bcrypt';
-import { sign } from 'jsonwebtoken';
+import jwt from 'jsonwebtoken';
+import { core, discord } from '@utils/api';
+import { getClientIp } from 'request-ip';
 
 type Data = {
   token?: any;
@@ -10,38 +10,39 @@ type Data = {
 };
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse<Data>) {
-  await connectToDatabase();
-  const reqBody = JSON.parse(req.body);
+  const { query } = req as any;
 
-  if (!(reqBody.username && reqBody.password)) {
+  if (!query.username || !query.password) {
     return res.status(400).json({
-      error: 'Username and Password parameter required',
+      error: 'Missing params',
     });
   }
 
-  var user = await userSchema.findOne({ username: reqBody.username });
+  var user = await core.get(query.username);
 
   if (!user) {
     return res.status(404).json({
-      error: 'No such a User found',
+      error: 'User does not exist',
     });
   }
 
-  if (!(await compare(reqBody.password, user.password_hash))) {
+  if (!(await compare(query.password, user.password_hash))) {
     return res.status(403).json({
-      error: 'Password incorrect',
+      error: 'Wrong password',
     });
   }
 
-  const jwtToken = sign(
+  const jwtToken = jwt.sign(
     {
-      username: user.username,
-      password_hash: user.password_hash,
+      uuid: user?.uuid,
+      username: user?.username,
+      avatar: await discord.avatar(user?.extra?.discord),
+      ip: getClientIp(req),
     },
-    process.env.JWT_SECRET_KEY as any,
+    process.env.JWT_SECRET_KEY!,
     { expiresIn: '1d' },
   );
 
   res.setHeader('Set-Cookie', `jwt=${jwtToken}; Max-Age=${60 * 60 * 24}; path=/`);
-  return res.status(200).json({ token: jwtToken });
+  return res.status(200).json(jwt.decode(jwtToken) as any);
 }

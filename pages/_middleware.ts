@@ -11,7 +11,5 @@ export async function middleware(req: NextRequest) {
     return NextResponse.redirect('/login');
   }
 
-  console.log(jwt);
-
   return NextResponse.next();
 }

@@ -33,9 +33,3 @@ export async function verifyAuth(req: NextRequest) {
 
   return [true, null, jwt.decode(token) as UserJwtPayload];
 }
-
-export const discordAvatar = async (discord: any) => {
-  const url = discord?.avatar?.url;
-
-  return url ? url : '<FALLBACK_AVATAR>';
-};
