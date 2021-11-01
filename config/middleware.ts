@@ -1,1 +1,5 @@
-export const loginRequired: String[] = ['/', '/embed/[url]'];
+export const middleware = {
+  restricted: ['/', '/embed/[url]'],
+};
+
+export default middleware;

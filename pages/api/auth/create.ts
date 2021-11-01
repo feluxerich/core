@@ -3,6 +3,7 @@ import { compare } from 'bcrypt';
 import jwt from 'jsonwebtoken';
 import { core, discord } from '@utils/api';
 import { getClientIp } from 'request-ip';
+import userSchema from '@models/userSchema';
 
 type Data = {
   token?: any;
@@ -18,7 +19,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse<
     });
   }
 
-  var user = await core.get(query.username);
+  var user = await core.findOne({ username: query.username });
 
   if (!user) {
     return res.status(404).json({
@@ -32,12 +33,15 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse<
     });
   }
 
+  await core.updateAfterLogin(query?.username, req);
+
   const jwtToken = jwt.sign(
     {
       uuid: user?.uuid,
       username: user?.username,
       avatar: await discord.avatar(user?.extra?.discord),
       ip: getClientIp(req),
+      last_login: user.extra.last_login,
     },
     process.env.JWT_SECRET_KEY!,
     { expiresIn: '1d' },
