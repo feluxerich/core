@@ -43,15 +43,15 @@ const Sidebar = () => {
       </div>
       <div className="w-full p-3" style={{ aspectRatio: '1 / 1', background: 'rgba(0,0,0, 0.25)' }}>
         <div className="relative grid h-full place-items-center" style={{ aspectRatio: '1 / 1' }}>
-          <Image
-            src="https://cdn.discordapp.com/avatars/701400631662870609/e04bd4df8c313ef12315ef69596e1328.png?size=256"
-            alt="<USER> Avatar"
+          {/*           <Image
+            src={`${config?.avatar ? config?.avatar : `/default_avatar.png`}?size=256`}
+            alt="Avatar"
             objectFit="cover"
             layout="fill"
             className="rounded"
             quality={100}
             priority={true}
-          />
+          /> */}
         </div>
       </div>
     </div>

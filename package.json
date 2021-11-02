@@ -11,6 +11,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@hookstate/core": "^3.0.13",
     "@tsndr/cloudflare-worker-jwt": "^1.1.4",
     "bcrypt": "^5.0.1",
     "copy-to-clipboard": "^3.3.1",
