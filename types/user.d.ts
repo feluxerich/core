@@ -14,4 +14,17 @@ export interface User {
   };
 }
 
-export interface UserSettings {}
+export interface JwtUser {
+  uuid: string;
+  username: string;
+  avatar: string;
+  ip: string;
+  last_login: number;
+  iat: number;
+  exp: number;
+}
+
+interface UserJwtPayload {
+  jti: string;
+  iat: number;
+}

@@ -3,7 +3,6 @@ import { compare } from 'bcrypt';
 import jwt from 'jsonwebtoken';
 import { core, discord } from '@utils/api';
 import { getClientIp } from 'request-ip';
-import userSchema from '@models/userSchema';
 
 type Data = {
   token?: any;

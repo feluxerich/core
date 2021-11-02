@@ -1,10 +1,12 @@
 import userSchema from '@models/userSchema';
-import { User } from '@Types/user';
+import { JwtUser, User, UserJwtPayload } from '@Types/user';
 import { Connection, FilterQuery } from 'mongoose';
 import { connectToDatabase } from './database';
 import { basicFetch } from './fetch';
 import { getClientIp } from 'request-ip';
 import { NextApiRequest } from 'next';
+import jwt from '@tsndr/cloudflare-worker-jwt';
+import { NextRequest } from 'next/server';
 
 export class Discord {
   async get(id: string) {
@@ -38,6 +40,7 @@ class Ip {
 
 export class Core {
   ip: Ip;
+
   constructor() {
     this.ip = new Ip();
   }
@@ -68,7 +71,37 @@ export class Core {
 
   async updateAfterLogin(username: string, req: NextApiRequest) {
     await this.init();
-    return await userSchema.updateOne({ username }, { $set: { 'extra.ip': getClientIp(req), 'extra.last_login': Date.now() } });
+    return await userSchema.updateOne(
+      { username },
+      { $set: { 'extra.ip': getClientIp(req), 'extra.last_login': Date.now(), 'extra.user_agent': req.headers['user-agent'] } },
+    );
+  }
+
+  async verify(req: NextRequest) {
+    const token = req.cookies.jwt;
+
+    if (!token) {
+      return [false, 'Missing user token', null];
+    }
+
+    try {
+      if (!(await jwt.verify(token, process.env.JWT_SECRET_KEY!))) {
+        return [false, 'Your token has expired.', null];
+      }
+    } catch (error) {
+      return [false, (error as any).message, null];
+    }
+
+    return [true, null, jwt.decode(token) as UserJwtPayload];
+  }
+
+  config(req: NextApiRequest | any): JwtUser | null {
+    const cookie = req.cookies.jwt;
+    if (!cookie) return null;
+
+    const decoded: any = jwt.decode(cookie);
+
+    return decoded;
   }
 }
 

@@ -23,6 +23,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     username,
     password_hash: pw.hash(password),
     extra: {
+      user_agent: req.headers['user-agent'],
       ip: getClientIp(req),
       discord: discordId,
       first_login: Date.now(),
