@@ -1,17 +1,10 @@
-# Welcome to MkDocs
+# Core
 
-For full documentation visit [mkdocs.org](https://www.mkdocs.org).
+## Used to know
 
-## Commands
-
-* `mkdocs new [dir-name]` - Create a new project.
-* `mkdocs serve` - Start the live-reloading docs server.
-* `mkdocs build` - Build the documentation site.
-* `mkdocs -h` - Print help message and exit.
-
-## Project layout
-
-    mkdocs.yml    # The configuration file.
-    docs/
-        index.md  # The documentation homepage.
-        ...       # Other markdown pages, images and other files.
+|          | Production                                   | Development                                | Other                                |
+| -------- | -------------------------------------------- | ------------------------------------------ | ------------------------------------ |
+| Site URL | <https://core.fluxi.ml/>                     | <https://dev.core.fluxi.ml/>               |                                      |
+| Image    | `docker pull ghcr.io/feluxerich/core:latest` | `docker pull ghcr.io/feluxerich/core:edge` |                                      |
+| Repo URL |                                              |                                            | <https://github.com/feluxerich/core> |
+| Docs URL |                                              |                                            | <https://docs.core.fluxi.ml/>        |

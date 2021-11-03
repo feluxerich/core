@@ -48,7 +48,6 @@ yarn-error.log*
 # maybe
 package-lock.json
 venv
-.babelrc
 
 # Editor
 .vscode

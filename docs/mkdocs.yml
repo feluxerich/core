@@ -1,15 +1,20 @@
 site_name: Core Project
+site_url: https://core.fluxi.ml/
+repo_url: https://github.com/feluxerich/core
+edit_uri: edit/main/docs/docs # TODO: Maybe change this to blob
 nav:
   - Home: index.md
   - Changelog:
-      - v1.9: 'changelog/v1.9.md'
-      - v1.8: 'changelog/v1.8.md'
-      - v1.7: 'changelog/v1.7.md'
-      - v1.6: 'changelog/v1.6.md'
-      - v1.5: 'changelog/v1.5.md'
-      - v1.4: 'changelog/v1.4.md'
-      - v1.3: 'changelog/v1.3.md'
-      - v1.2: 'changelog/v1.2.md'
-      - v1.1: 'changelog/v1.1.md'
-      - v1.0: 'changelog/v1.0.md'
+      - v1.9: "changelog/v1.9.md"
+      - v1.8: "changelog/v1.8.md"
+      - v1.7: "changelog/v1.7.md"
+      - v1.6: "changelog/v1.6.md"
+      - v1.5: "changelog/v1.5.md"
+      - v1.4: "changelog/v1.4.md"
+      - v1.3: "changelog/v1.3.md"
+      - v1.2: "changelog/v1.2.md"
+      - v1.1: "changelog/v1.1.md"
+      - v1.0: "changelog/v1.0.md"
+  - Contributors: "contributors.md"
+  - Deploy: "deploy.md"
 theme: material
