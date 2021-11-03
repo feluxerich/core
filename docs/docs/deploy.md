@@ -3,10 +3,11 @@
 ## Create a `.env` file
 
 ```bash
-touch .env
-echo TRN_API_KEY={Your private tracker.gg API key} >> .env
-echo JWT_SECRET_KEY={A random static secret key} >> .env
-echo MONGO_URI={Your MongoDB connection URI} >> .env
+cat <<_EOF > .env
+TRN_API_KEY={Your private tracker.gg API key}
+JWT_SECRET_KEY={A random static secret key}
+MONGO_URI={Your MongoDB connection URI}
+_EOF
 ```
 
 ## Deploy with Docker
