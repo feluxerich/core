@@ -5,8 +5,7 @@ import { connectToDatabase } from './database';
 import { basicFetch } from './fetch';
 import { getClientIp } from 'request-ip';
 import { NextApiRequest } from 'next';
-import jwt from '@tsndr/cloudflare-worker-jwt';
-import { NextRequest } from 'next/server';
+import jwt from 'jsonwebtoken';
 
 export class Discord {
   async get(id: string) {
@@ -75,24 +74,6 @@ export class Core {
       { username },
       { $set: { 'extra.ip': getClientIp(req), 'extra.last_login': Date.now(), 'extra.user_agent': req.headers['user-agent'] } },
     );
-  }
-
-  async verify(req: NextRequest) {
-    const token = req.cookies.jwt;
-
-    if (!token) {
-      return [false, 'Missing user token', null];
-    }
-
-    try {
-      if (!(await jwt.verify(token, process.env.JWT_SECRET_KEY!))) {
-        return [false, 'Your token has expired.', null];
-      }
-    } catch (error) {
-      return [false, (error as any).message, null];
-    }
-
-    return [true, null, jwt.decode(token) as UserJwtPayload];
   }
 
   config(req: NextApiRequest | any): JwtUser | null {

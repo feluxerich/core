@@ -1,10 +1,14 @@
 import { NextRequest, NextResponse } from 'next/server';
 import config from '@config/middleware';
-import { core } from '@utils/api';
+import { verifyAuth } from '@utils/middleware';
 
 export async function middleware(req: NextRequest) {
   if (!req.page.name || !config.restricted.includes(req.page.name)) return;
-  const [verified, error, jwt] = await core.verify(req);
+  const [verified, error, jwt] = await verifyAuth(req);
+
+  if (error) {
+    // error
+  }
 
   if (!verified) {
     return NextResponse.redirect('/login');
