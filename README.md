@@ -1,34 +1,32 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Core
 
-## Getting Started
+- [Docs](https://docs.core.fluxi.ml/)
+  - [Deploy](https://docs.core.fluxi.ml/deploy)
+  - [Contributors](https://docs.core.fluxi.ml/contributors)
+- [Stable](https://core.fluxi.ml/)
+- [Development](https://dev.core.fluxi.ml/)
+- [Information](#info)
+  - [Appending](#appending)
+- [Contributing](#contributing)
+  - [Formatter](#formatter)
+  - [Style](#style)
 
-First, run the development server:
+## Info
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+The best web app for literally everything is core. You can really do everything with it. Also cook coffee and build a house. It's for organizing and managing everything in one app. This is the point why it also has PWA subscription.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Appending
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+So why are you still here request access and make your life better.
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+## Contributing
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+If you want to contribute something to this project please accept that we do not accept everything as a feature. So please make sure that your feature has no pornographic content. It also mustn't have any violence. Also please take care about security risks and design your code clean and in form.
 
-## Learn More
+### Formatter
 
-To learn more about Next.js, take a look at the following resources:
+We use `prettier` for our project so please make sure to use format your code and use our `.prettierrc.js` as config.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Style
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+TailwindCSS is the CSS framework we have chosen for this project and we try not to use plain CSS if it is possible with tailwind.
