@@ -54,6 +54,11 @@ export const sidebar: SidebarProps = {
         name: 'Expand',
         route: '/',
       },
+      {
+        icon: 'IoExitOutline',
+        name: 'Logout',
+        route: '/api/auth/destroy',
+      },
     ],
   },
 };

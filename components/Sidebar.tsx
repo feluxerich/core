@@ -28,6 +28,7 @@ const Sidebar = () => {
                           <div
                             className="grid w-full cursor-pointer hover:bg-primary-700 rounded-15 place-items-center"
                             style={{ aspectRatio: '1 / 1' }}
+                            title={name}
                           >
                             <Icon className="w-4 h-4" />
                           </div>
