@@ -5,12 +5,7 @@ import Sidebar from '@components/Sidebar';
 import Embed from '@components/Embed';
 
 const Home: NextPage = () => {
-  return (
-    <Full className="flex justify-start">
-      <Sidebar />
-      <Embed />
-    </Full>
-  );
+  return <Embed />;
 };
 
 export default Home;
