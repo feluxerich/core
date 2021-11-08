@@ -38,6 +38,11 @@ export const sidebar: SidebarProps = {
           name: 'Clocks',
           route: '/clocks',
         },
+        {
+          icon: 'IoCubeOutline',
+          name: 'HyPixel',
+          route: '/minecraft/hypixel',
+        },
       ] as SidebarItemProps[],
       'name',
     ),
