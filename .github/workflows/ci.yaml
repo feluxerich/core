@@ -3,9 +3,9 @@ name: Core Project CI Workflow
 on:
   push:
     branches:
-      - "main"
+      - 'main'
     tags:
-      - "v*"
+      - 'v*'
   pull_request:
 
 env:

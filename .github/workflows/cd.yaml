@@ -3,9 +3,9 @@ name: Core Project CD Workflow
 on:
   workflow_run:
     workflows:
-      - "Core Project CI Workflow"
+      - 'Core Project CI Workflow'
     branches:
-      - "main"
+      - 'main'
     types:
       - completed
 

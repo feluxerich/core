@@ -1,17 +1,16 @@
 /** @type {import('next').NextConfig} */
-const withPWA = require("next-pwa")
+const withPWA = require('next-pwa');
 
 module.exports = withPWA({
   reactStrictMode: true,
   images: {
-    domains: ["cdn.discordapp.com"]
+    domains: ['cdn.discordapp.com'],
   },
   pwa: {
-    dest: "public",
+    dest: 'public',
     register: true,
     skipWaiting: true,
     disable: process.env.NODE_ENV === 'development',
-    buildExcludes: [/middleware-manifest.json$/]
+    buildExcludes: [/middleware-manifest.json$/],
   },
-})
-
+});
