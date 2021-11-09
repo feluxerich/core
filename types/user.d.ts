@@ -20,6 +20,7 @@ export interface JwtUser {
   avatar: string;
   ip: string;
   last_login: number;
+
   iat: number;
   exp: number;
 }
