@@ -43,6 +43,12 @@ export const sidebar: SidebarProps = {
           name: 'HyPixel',
           route: '/minecraft/hypixel',
         },
+        {
+          icon: "IoDocumentTextOutline",
+          name: "Word Counter",
+          route: "https://wordcounter.m2vi.me/",
+          external: true
+        }
       ] as SidebarItemProps[],
       'name',
     ),

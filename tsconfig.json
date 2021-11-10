@@ -20,7 +20,7 @@
       "@context/*": ["context/*"],
       "@pages/*": ["pages/*"],
       "@public/*": ["public/*"],
-      "@styles/*": ["styles/*"],
+      "@styles/*": ["public/styles/*"],
       "@Types/*": ["types/*"],
       "@utils/*": ["utils/*"],
       "@models/*": ["models/*"],
