@@ -11,7 +11,7 @@ function Hypixel() {
   };
 
   const [value, setValue] = useState('');
-  const [data, setData] = useState({} as any);
+  const [data, setData] = useState({ id: '76846c1e164c4d9fb0427dc5566c1e98' } as any);
 
   const handleChange = (e: any) => {
     setValue(e.currentTarget.value);
@@ -40,7 +40,13 @@ function Hypixel() {
         </div>
         <div className="flex flex-row w-full h-64 max-w-xl mt-6 border rounded-lg bg-primary-800 border-primary-600 p-7">
           <div className="h-full rounded-lg mr-9" style={{ aspectRatio: '1/1' }}>
-            <Image className="w-full h-full rounded-lg" src={`https://mc-heads.net/avatar/${data?.id}`} alt="profile-head" height={200} width={200} />
+            <Image
+              className="w-full h-full rounded-lg"
+              src={`https://crafatar.com/avatars/${data?.id}`}
+              alt="profile-head"
+              height={200}
+              width={200}
+            />
           </div>
           <div className="flex flex-col w-full h-full font-bold text-white">
             <p className="mb-4 text-2xl">{data?.name}</p>
