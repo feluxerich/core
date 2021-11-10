@@ -4,15 +4,3 @@
   border-right: 3px var(--color-primary-600) solid;
   border-radius: 50%;
 }
-
-#nprogress .bar {
-  background: var(--color-accent);
-}
-#nprogress .peg {
-  box-shadow: 0 0 10px var(--color-accent), 0 0 5px var(--color-accent);
-}
-
-#nprogress .spinner-icon {
-  border-top-color: var(--color-accent);
-  border-left-color: var(--color-accent);
-}
