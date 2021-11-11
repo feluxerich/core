@@ -27,11 +27,11 @@ export function verifyAuth(req: NextRequest) {
   const token = req.cookies.jwt;
 
   if (!token) {
-    return jsonResponse(401, { error: { message: 'Missing user token' } });
+    return jsonResponse(404, { error: { message: 'Missing user token' } });
   }
 
   if (!jwt.verify(token, process.env.JWT_SECRET || 'change me pls')) {
-    return jsonResponse(401, { error: { message: 'Your token has expired.' } });
+    return jsonResponse(498, { error: { message: 'Your token has expired.' } });
   }
 
   return jwt.decode(token) as UserJwtPayload;
