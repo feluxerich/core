@@ -2,17 +2,16 @@
   --color-button-text: hsl(0, 0%, 100%);
 
   --color-accent: #0a84ff;
-  --color-accent-hover: #51a8ff;
+  --color-accent-hover: #3399ff;
   --color-accent-disabled: #51a8ff;
-  --color-accent-glow: #00aaff10;
 
-  --color-primary-100: hsl(0, 100%, 100%);
-  --color-primary-200: hsl(0, 0%, 90%);
-  --color-primary-300: hsl(240, 24%, 60%);
-  --color-primary-400: hsl(240, 24%, 50%);
-  --color-primary-500: hsl(240, 24%, 40%);
-  --color-primary-600: hsl(240, 24%, 30%);
-  --color-primary-700: hsl(240, 24%, 20%);
-  --color-primary-800: hsl(240, 24%, 10%);
-  --color-primary-900: hsl(240, 24%, 5%);
+  --color-primary-100: #ffffff;
+  --color-primary-200: #e6e6e6;
+  --color-primary-300: #8181b1;
+  --color-primary-400: #61619e;
+  --color-primary-500: #4e4e7e;
+  --color-primary-600: #3a3a5f;
+  --color-primary-700: #27273f;
+  --color-primary-800: #131320;
+  --color-primary-900: #0a0a10;
 }
