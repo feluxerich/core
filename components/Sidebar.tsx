@@ -6,7 +6,7 @@ import * as icons from 'react-icons/io5';
 
 const Sidebar = () => {
   return (
-    <div className="flex flex-col items-center justify-between h-screen bg-primary-800" style={{ minWidth: '75px' }}>
+    <div className="fixed flex flex-col items-center justify-between h-screen bg-primary-800" style={{ minWidth: '75px' }}>
       <div className="flex flex-col items-center justify-between w-full h-full">
         {Object.entries(sidebar).map((entry, i) => {
           const child = (sidebar as any)[entry[0]];

@@ -20,33 +20,6 @@ module.exports = {
       '6xl': '4rem',
       '7xl': '5rem',
     },
-    colors: {
-      button: 'var(--color-button-text)',
-      transparent: 'transparent',
-      default: 'red',
-      white: 'white',
-      primary: {
-        100: 'var(--color-primary-100)',
-        200: 'var(--color-primary-200)',
-        300: 'var(--color-primary-300)',
-        400: 'var(--color-primary-400)',
-        500: 'var(--color-primary-500)',
-        600: 'var(--color-primary-600)',
-        700: 'var(--color-primary-700)',
-        800: 'var(--color-primary-800)',
-        900: 'var(--color-primary-900)',
-      },
-      secondary: {
-        DEFAULT: 'var(--color-secondary)',
-        'washed-out': 'var(--color-secondary-washed-out)',
-      },
-      accent: {
-        DEFAULT: 'var(--color-accent)',
-        hover: 'var(--color-accent-hover)',
-        disabled: 'var(--color-accent-disabled)',
-        glow: 'var(--color-accent-glow)',
-      },
-    },
     spacing: {
       0: '0px',
       1: '5px',
@@ -83,6 +56,33 @@ module.exports = {
       1: '0px 4px 14px rgba(0, 0, 0, 0.4)',
     },
     extend: {
+      colors: {
+        button: 'var(--color-button-text)',
+        transparent: 'transparent',
+        default: 'red',
+        white: 'white',
+        primary: {
+          100: 'var(--color-primary-100)',
+          200: 'var(--color-primary-200)',
+          300: 'var(--color-primary-300)',
+          400: 'var(--color-primary-400)',
+          500: 'var(--color-primary-500)',
+          600: 'var(--color-primary-600)',
+          700: 'var(--color-primary-700)',
+          800: 'var(--color-primary-800)',
+          900: 'var(--color-primary-900)',
+        },
+        secondary: {
+          DEFAULT: 'var(--color-secondary)',
+          'washed-out': 'var(--color-secondary-washed-out)',
+        },
+        accent: {
+          DEFAULT: 'var(--color-accent)',
+          hover: 'var(--color-accent-hover)',
+          disabled: 'var(--color-accent-disabled)',
+          glow: 'var(--color-accent-glow)',
+        },
+      },
       borderRadius: {
         DEFAULT: '50%',
         0: '0px',

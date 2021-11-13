@@ -7,7 +7,7 @@ export const Layout: FunctionComponent = props => {
     <>
       <Full className="flex justify-start">
         <Sidebar />
-        {props.children}
+        <Full className="flex items-center justify-center">{props.children}</Full>
       </Full>
     </>
   );
