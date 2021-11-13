@@ -18,8 +18,8 @@ export const sidebar: SidebarProps = {
         },
         {
           icon: 'IoStatsChartOutline',
-          name: 'Statistics',
-          route: '/',
+          name: 'Covid-19',
+          route: '/covid/germany',
         },
         {
           icon: 'IoLockClosedOutline',
@@ -44,11 +44,11 @@ export const sidebar: SidebarProps = {
           route: '/minecraft/hypixel',
         },
         {
-          icon: "IoDocumentTextOutline",
-          name: "Word Counter",
-          route: "https://wordcounter.m2vi.me/",
-          external: true
-        }
+          icon: 'IoDocumentTextOutline',
+          name: 'Word Counter',
+          route: 'https://wordcounter.m2vi.me/',
+          external: true,
+        },
       ] as SidebarItemProps[],
       'name',
     ),

@@ -6,7 +6,7 @@ import { Layout } from '@components/Layout';
 import { LineChart } from '@components/LineChart';
 import { TextCard } from '@components/TextCard';
 
-const Germany: NextPage = ({ history, now }: any) => {
+const Germany: any = ({ history, now }: any) => {
   var dates: any = [];
 
   var incidence: any = [];
