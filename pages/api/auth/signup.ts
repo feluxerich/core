@@ -3,7 +3,6 @@ import { connectToDatabase } from '@utils/database';
 import type { NextApiRequest, NextApiResponse } from 'next';
 import pw from '@utils/password';
 import { core, discord } from '@utils/api';
-import { v4 } from 'uuid';
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   const connection = await connectToDatabase();
@@ -15,7 +14,6 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   if (!(await discord.exists(discordId))) return res.status(400).json({ error: 'Discord id is not assigned' });
 
   const obj = new userSchema({
-    uuid: v4(),
     username,
     password_hash: pw.hash(password),
     creation_date: Date.now(),
