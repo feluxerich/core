@@ -34,17 +34,12 @@ module.exports = {
       80: '80px',
       10: '50px',
       11: '60px',
-      '5l': '10rem',
-      'n1/2': '-50%',
       24: '24rem',
       100: '100px',
       200: '200px',
       250: '250px',
-      n250: '-250px',
       300: '350px',
       400: '400px',
-      wide: '1440px',
-      widget: '105px',
     },
     borderWidth: {
       DEFAULT: '1px',
@@ -72,15 +67,10 @@ module.exports = {
           800: 'var(--color-primary-800)',
           900: 'var(--color-primary-900)',
         },
-        secondary: {
-          DEFAULT: 'var(--color-secondary)',
-          'washed-out': 'var(--color-secondary-washed-out)',
-        },
         accent: {
           DEFAULT: 'var(--color-accent)',
           hover: 'var(--color-accent-hover)',
           disabled: 'var(--color-accent-disabled)',
-          glow: 'var(--color-accent-glow)',
         },
       },
       borderRadius: {

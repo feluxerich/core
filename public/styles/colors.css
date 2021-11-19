@@ -1,9 +1,5 @@
 :root {
-  --color-button-text: hsl(0, 0%, 100%);
-
-  --color-accent: #0a84ff;
-  --color-accent-hover: #3399ff;
-  --color-accent-disabled: #51a8ff;
+  --color-button-text: #ffffff;
 
   --color-primary-100: #ffffff;
   --color-primary-200: #e6e6e6;
@@ -14,4 +10,28 @@
   --color-primary-700: #27273f;
   --color-primary-800: #131320;
   --color-primary-900: #0a0a10;
+}
+
+:root {
+  --color-accent: #0a84ff;
+  --color-accent-hover: #52a8ff;
+  --color-accent-disabled: #51a8ff;
+}
+
+.theme-default {
+  --color-accent: #0a84ff;
+  --color-accent-hover: #52a8ff;
+  --color-accent-disabled: #51a8ff;
+}
+
+.theme-red {
+  --color-accent: #fd4d4d;
+  --color-accent-hover: #fd6868;
+  --color-accent-disabled: #fd6868;
+}
+
+.theme-pink {
+  --color-accent: #ea4c89;
+  --color-accent-hover: #f082ac;
+  --color-accent-disabled: #f082ac;
 }
