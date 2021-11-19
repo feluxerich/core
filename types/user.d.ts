@@ -1,7 +1,13 @@
 import { ObjectId } from 'mongoose';
+import { MongooseBase } from './base';
 
-export interface User {
-  _id: ObjectId;
+export interface HistoryEntry {
+  ip: string | null;
+  ua: string | undefined;
+  date: number;
+}
+
+export interface User extends MongooseBase {
   uuid: string;
   mail: string;
   username: string;
@@ -12,20 +18,13 @@ export interface User {
     first_login: number;
     last_login: number;
   };
+  history: Array<HistoryEntry>;
 }
 
-export interface JwtUser {
+export interface JwtUser extends JwtBase {
   uuid: string;
   username: string;
   avatar: string;
   ip: string;
   last_login: number;
-
-  iat: number;
-  exp: number;
-}
-
-interface UserJwtPayload {
-  jti: string;
-  iat: number;
 }

@@ -6,12 +6,17 @@ import 'tailwindcss/tailwind.css';
 import 'react-toastify/dist/ReactToastify.css';
 import type { AppProps } from 'next/app';
 import { NextSeo } from 'next-seo';
-import { Layout } from '@components/Layout';
-import { ReactElement, ReactNode } from 'react';
 import { NextPage } from 'next';
+import { Router } from 'next/dist/client/router';
+import nProgress from 'nprogress';
+import { Layout } from '@components/Layout';
+
+Router.events.on('routeChangeStart', () => nProgress.start());
+Router.events.on('routeChangeComplete', () => nProgress.done());
+Router.events.on('routeChangeError', () => nProgress.done());
 
 type NextPageWithLayout = NextPage & {
-  getLayout?: (page: ReactElement) => ReactNode;
+  layout?: boolean;
 };
 
 type AppPropsWithLayout = AppProps & {
@@ -19,11 +24,13 @@ type AppPropsWithLayout = AppProps & {
 };
 
 function MyApp({ Component, pageProps }: AppPropsWithLayout) {
-  const getLayout = Component.getLayout || (page => <Layout>{page}</Layout>);
+  const LayoutC = Component.layout ? ({ children }: any) => <Layout>{children}</Layout> : ({ children }: any) => children;
 
   return (
     <>
-      {getLayout(<Component {...pageProps} />)}
+      <LayoutC>
+        <Component {...pageProps} />
+      </LayoutC>
       <NextSeo defaultTitle="Core" title="Core" description="Used to know" />
     </>
   );

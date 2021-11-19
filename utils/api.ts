@@ -1,5 +1,5 @@
 import userSchema from '@models/userSchema';
-import { JwtUser, User, UserJwtPayload } from '@Types/user';
+import { JwtUser, User } from '@Types/user';
 import { Connection, FilterQuery } from 'mongoose';
 import { connectToDatabase } from './database';
 import { basicFetch } from './fetch';
@@ -70,10 +70,13 @@ export class Core {
 
   async updateAfterLogin(username: string, req: NextApiRequest) {
     await this.init();
-    return await userSchema.updateOne(
-      { username },
-      { $set: { 'extra.ip': getClientIp(req), 'extra.last_login': Date.now(), 'extra.user_agent': req.headers['user-agent'] } },
-    );
+    let history = (await this.findOne({ username })).history;
+    history = history && Array.isArray(history) ? history : [];
+    return await userSchema.updateOne({ username }, { $set: { history: history.concat(this.getHistoryEntry(req)) } });
+  }
+
+  getHistoryEntry(req: NextApiRequest) {
+    return { ip: getClientIp(req), ua: req.headers['user-agent'], date: Date.now() };
   }
 
   config(req: NextApiRequest | any): JwtUser | null {

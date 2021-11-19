@@ -1,7 +1,7 @@
 import { NextApiRequest } from 'next';
 import jwt from '@tsndr/cloudflare-worker-jwt';
-import { UserJwtPayload } from '@Types/user';
 import { NextRequest } from 'next/server';
+import { UserJwtPayload } from '@Types/base';
 
 export const verifyAuth = async (req: NextApiRequest | NextRequest) => {
   const token = req.cookies.jwt;

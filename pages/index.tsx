@@ -1,11 +1,7 @@
-import type { NextPage } from 'next';
-import Full from '@components/Full';
-import Sidebar from '@components/Sidebar';
-import { ReactElement } from 'react';
-import { Layout } from '@components/Layout';
-
-const Home: NextPage = () => {
+const Home = () => {
   return <div />;
 };
+
+Home.layout = true;
 
 export default Home;

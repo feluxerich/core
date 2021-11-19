@@ -2,7 +2,6 @@ import userSchema from '@models/userSchema';
 import { connectToDatabase } from '@utils/database';
 import type { NextApiRequest, NextApiResponse } from 'next';
 import pw from '@utils/password';
-import { getClientIp } from 'request-ip';
 import { core, discord } from '@utils/api';
 import { v4 } from 'uuid';
 import validator from 'validator';
@@ -22,13 +21,11 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     mail,
     username,
     password_hash: pw.hash(password),
-    extra: {
-      user_agent: req.headers['user-agent'],
-      ip: getClientIp(req),
+    creation_date: Date.now(),
+    connections: {
       discord: discordId,
-      first_login: Date.now(),
-      last_login: Date.now(),
     },
+    history: [core.getHistoryEntry(req)],
   });
 
   await obj.save();

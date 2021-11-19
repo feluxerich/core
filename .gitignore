@@ -49,6 +49,7 @@ yarn-error.log*
 package-lock.json
 venv
 betterworker.sh
+.babelrc
 
 # Editor
 .vscode
