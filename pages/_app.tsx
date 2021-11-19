@@ -16,7 +16,7 @@ Router.events.on('routeChangeComplete', () => nProgress.done());
 Router.events.on('routeChangeError', () => nProgress.done());
 
 type NextPageWithLayout = NextPage & {
-  layout?: boolean;
+  noLayout?: boolean;
 };
 
 type AppPropsWithLayout = AppProps & {
@@ -24,7 +24,7 @@ type AppPropsWithLayout = AppProps & {
 };
 
 function MyApp({ Component, pageProps }: AppPropsWithLayout) {
-  const LayoutC = Component.layout ? ({ children }: any) => <Layout>{children}</Layout> : ({ children }: any) => children;
+  const LayoutC = Component.noLayout ? ({ children }: any) => children : ({ children }: any) => <Layout>{children}</Layout>;
 
   return (
     <>

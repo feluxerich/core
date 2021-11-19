@@ -4,4 +4,6 @@ const login = () => {
   return <Login />;
 };
 
+login.noLayout = true;
+
 export default login;

@@ -2,7 +2,7 @@ import userSchema from '@models/userSchema';
 import { JwtUser, User } from '@Types/user';
 import { Connection, FilterQuery } from 'mongoose';
 import { connectToDatabase } from './database';
-import { basicFetch } from './fetch';
+import { baseUrl, basicFetch } from './fetch';
 import { getClientIp } from 'request-ip';
 import { NextApiRequest } from 'next';
 import jwt from 'jsonwebtoken';
@@ -27,7 +27,7 @@ export class Discord {
 
 export const discord = new Discord();
 
-class Ip {
+export class Ip {
   async get(req?: NextApiRequest) {
     if (req) {
       return getClientIp(req);
@@ -35,7 +35,13 @@ class Ip {
       return (await basicFetch('/api/ip'))?.ip;
     }
   }
+
+  async lookup(req: NextApiRequest) {
+    return await basicFetch(`${baseUrl(req)}/api/ip/${getClientIp(req)}`);
+  }
 }
+
+export const ipClient = new Ip();
 
 export class Core {
   ip: Ip;

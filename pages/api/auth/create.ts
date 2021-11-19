@@ -1,8 +1,7 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
 import bcrypt from 'bcrypt';
 import jwt from 'jsonwebtoken';
-import { core, discord } from '@utils/api';
-import { getClientIp } from 'request-ip';
+import { core, discord, ipClient } from '@utils/api';
 
 type Data = {
   token?: any;
@@ -36,11 +35,12 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse<
 
     const jwtToken = jwt.sign(
       {
-        uuid: user?.uuid,
-        username: user?.username,
-        avatar: await discord.avatar(user?.extra?.discord),
-        ip: getClientIp(req),
-        last_login: user.extra.last_login,
+        username: user.username,
+        avatar: await discord.avatar(user.connections.discord),
+        ip: await ipClient.lookup(req),
+        session: {
+          start_time: Date.now(),
+        },
       },
       process.env.JWT_SECRET_KEY!,
       { expiresIn: '1d' },

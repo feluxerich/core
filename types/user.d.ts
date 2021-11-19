@@ -8,15 +8,11 @@ export interface HistoryEntry {
 }
 
 export interface User extends MongooseBase {
-  uuid: string;
-  mail: string;
   username: string;
   password_hash: string;
-  extra: {
-    ip: string;
-    discord: string;
-    first_login: number;
-    last_login: number;
+  creation_date: number;
+  connections: {
+    [name: string]: string;
   };
   history: Array<HistoryEntry>;
 }

@@ -4,4 +4,6 @@ const signup = () => {
   return <SignUp />;
 };
 
+signup.noLayout = true;
+
 export default signup;
