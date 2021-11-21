@@ -6,7 +6,6 @@ on:
       - "main"
     tags:
       - "v*"
-  pull_request:
 
 env:
   NODE_VERSION: 14.x
@@ -16,7 +15,6 @@ env:
 jobs:
   docker:
     if: ${{ github.event_name != 'pull_request' }}
-    needs: [lint]
     runs-on: ubuntu-latest
 
     steps:

@@ -2,6 +2,7 @@ name: Mkdocs Workflow
 
 on:
   push:
+  pull_request:
 
 jobs:
   deploy:
