@@ -13,6 +13,22 @@ env:
   IMAGE_NAME: feluxerich/core
 
 jobs:
+  contributor:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - uses: actions/setup-python@v2
+        with:
+          python-version: 3.x
+      - run: pip install -r requirements.txt
+
+      - name: List Contributors
+        env:
+          GITHUB_SECRET: ${{github.token}}
+        run: scripts/cli.py list_contributors
+
   lint:
     runs-on: ubuntu-latest
 

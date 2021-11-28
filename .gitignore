@@ -54,3 +54,5 @@ betterworker.sh
 # Editor
 .vscode
 .idea
+
+**/__pycache__
