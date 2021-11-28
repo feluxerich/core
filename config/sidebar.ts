@@ -14,7 +14,7 @@ export const sidebar: SidebarProps = {
         {
           icon: 'IoQrCodeOutline',
           name: 'QR Code Generator',
-          route: '/',
+          route: '/qrcode',
         },
         {
           icon: 'IoStatsChartOutline',
