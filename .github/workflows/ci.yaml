@@ -27,6 +27,7 @@ jobs:
       - name: List Contributors
         env:
           GITHUB_SECRET: ${{github.token}}
+          GITHUB_REPO_NAME: feluxerich/core
         run: scripts/cli.py list_contributors
 
   lint:
