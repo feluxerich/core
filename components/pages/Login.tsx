@@ -74,7 +74,7 @@ const Login = () => {
           Login
         </Button>
         <Link href="/signup" passHref>
-          <span className="mt-4 font-bold text-center cursor-pointer text-accent">Not a account yet? Create one.</span>
+          <span className="mt-4 font-bold text-center cursor-pointer text-accent">Not an account yet? Create one.</span>
         </Link>
       </div>
     </Full>
