@@ -13,4 +13,12 @@ module.exports = withPWA({
     disable: process.env.NODE_ENV === 'development',
     buildExcludes: [/middleware-manifest.json$/],
   },
+  async rewrites() {
+    return [
+      {
+        source: '/proxy/:path*',
+        destination: 'https://:path*',
+      },
+    ];
+  },
 });

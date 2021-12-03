@@ -1,6 +1,6 @@
 import * as bcrypt from 'bcrypt';
 
-class Password {
+export class Password {
   hash(plain: string) {
     return bcrypt.hashSync(plain, 12);
   }

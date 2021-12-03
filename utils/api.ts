@@ -45,9 +45,11 @@ export const ipClient = new Ip();
 
 export class Core {
   ip: Ip;
+  discord: Discord;
 
   constructor() {
     this.ip = new Ip();
+    this.discord = new Discord();
   }
 
   async init(): Promise<Connection | undefined> {

@@ -1,8 +1,6 @@
-export const sortByKey = (array: Array<any>, key?: string, key2?: string) => {
-  if (array && key && !key2) {
+export const sortByKey = (array: Array<any>, key?: string) => {
+  if (array && key) {
     return array.sort((a, b) => (a[key] > b[key] ? 1 : b[key] > a[key] ? -1 : 0));
-  } else if (array && key && key2) {
-    return array.sort((a, b) => (a[key][key2] > b[key][key2] ? 1 : b[key][key2] > a[key][key2] ? -1 : 0));
   } else {
     return array.sort((a, b) => (a > b ? 1 : b > a ? -1 : 0));
   }
