@@ -1,6 +1,5 @@
 import { sidebar } from '@config/sidebar';
 import Link from 'next/link';
-import Image from 'next/image';
 import { SidebarItemProps } from '@Types/config';
 import * as icons from 'react-icons/io5';
 

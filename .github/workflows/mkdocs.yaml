@@ -2,9 +2,28 @@ name: Mkdocs Workflow
 
 on:
   push:
+  pull_request:
 
 jobs:
+  contributor:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - uses: actions/setup-python@v2
+        with:
+          python-version: 3.x
+      - run: pip install -r requirements.txt
+
+      - name: List Contributors
+        env:
+          GITHUB_SECRET: ${{github.token}}
+          GITHUB_REPO_NAME: feluxerich/core
+        run: scripts/cli.py list_contributors
+
   deploy:
+    needs: [contributor]
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -12,7 +31,7 @@ jobs:
       - uses: actions/setup-python@v2
         with:
           python-version: 3.x
-      - run: pip install mkdocs mkdocs-material
+      - run: pip install -r requirements.txt
 
       - run: |
           cd docs/

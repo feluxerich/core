@@ -1,12 +1,11 @@
-name: Core Project CI Workflow
+name: CI
 
 on:
   push:
     branches:
-      - 'main'
+      - "main"
     tags:
-      - 'v*'
-  pull_request:
+      - "v*"
 
 env:
   NODE_VERSION: 14.x
@@ -33,7 +32,6 @@ jobs:
 
   docker:
     if: ${{ github.event_name != 'pull_request' }}
-    needs: [lint]
     runs-on: ubuntu-latest
 
     steps:

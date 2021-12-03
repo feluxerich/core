@@ -10,15 +10,15 @@ type Data = {
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse<Data>) {
   try {
-    const { query } = req as any;
+    const { username, password } = JSON.parse(req.body) as any;
 
-    if (!query.username || !query.password) {
+    if (!username || !password) {
       return res.status(400).json({
         error: 'Missing params',
       });
     }
 
-    var user = await core.findOne({ username: query.username });
+    var user = await core.findOne({ username: username });
 
     if (!user) {
       return res.status(404).json({
@@ -26,12 +26,12 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse<
       });
     }
 
-    if (!(await bcrypt.compare(query.password, user.password_hash))) {
+    if (!(await bcrypt.compare(password, user.password_hash))) {
       return res.status(403).json({
         error: 'Wrong password',
       });
     }
-    await core.updateAfterLogin(query?.username, req);
+    await core.updateAfterLogin(username, req);
 
     const jwtToken = jwt.sign(
       {

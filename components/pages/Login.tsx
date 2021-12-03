@@ -3,6 +3,7 @@ import Full from '@components/Full';
 import { Input } from '@components/Input';
 import { useRouter } from 'next/dist/client/router';
 import { createRef, useState } from 'react';
+import Link from 'next/link';
 
 const Login = () => {
   const [errorUsername, setErrorUsername] = useState(false);
@@ -25,7 +26,13 @@ const Login = () => {
     const password = passwordRef.current.value;
 
     setDisabled(true);
-    fetch(`/api/auth/create?username=${username}&password=${password}`)
+    fetch(`/api/auth/create`, {
+      method: 'POST',
+      body: JSON.stringify({
+        username,
+        password,
+      }),
+    })
       .then(res => res.json())
       .then(res => {
         if (res.error) {
@@ -42,7 +49,7 @@ const Login = () => {
 
   return (
     <Full className="flex items-center justify-center">
-      <div className="mb-2 w-full max-w-xs flex flex-col">
+      <div className="flex flex-col w-full max-w-xs mb-2">
         <div className="mb-2">
           <Input
             onChange={() => setErrorUsername(false)}
@@ -66,6 +73,9 @@ const Login = () => {
         <Button className="w-full" onClick={handleSubmit}>
           Login
         </Button>
+        <Link href="/signup" passHref>
+          <span className="mt-4 font-bold text-center cursor-pointer text-accent">Not an account yet? Create one.</span>
+        </Link>
       </div>
     </Full>
   );
