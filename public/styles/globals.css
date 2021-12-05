@@ -87,13 +87,13 @@ body,
 }
 
 #nprogress .bar {
-  background: var(--color-accent);
+  background: var(--color-accent) !important;
 }
 #nprogress .peg {
-  box-shadow: 0 0 10px var(--color-accent), 0 0 5px var(--color-accent);
+  box-shadow: 0 0 10px var(--color-accent), 0 0 5px var(--color-accent) !important;
 }
 
 #nprogress .spinner-icon {
-  border-top-color: var(--color-accent);
-  border-left-color: var(--color-accent);
+  border-top-color: var(--color-accent) !important;
+  border-left-color: var(--color-accent) !important;
 }
