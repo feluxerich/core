@@ -46,7 +46,7 @@
     "validator": "^13.6.0"
   },
   "devDependencies": {
-    "@tailwindcss/forms": "^0.3.4",
+    "@tailwindcss/forms": "^0.4.0",
     "@tailwindcss/line-clamp": "^0.2.2",
     "@types/bcrypt": "^5.0.0",
     "@types/crypto-js": "^4.0.2",
