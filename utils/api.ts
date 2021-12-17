@@ -80,9 +80,7 @@ export class Core {
     await this.init();
     let history = (await this.findOne({ username })).history;
     history = history && Array.isArray(history) ? history : [];
-    try {
-      return await userSchema.updateOne({ username }, { history: history.concat(this.getHistoryEntry(req)) });
-    } catch (e) {}
+    return await userSchema.updateOne({ username }, { history: history.concat(this.getHistoryEntry(req)) } as any);
   }
 
   getHistoryEntry(req: NextApiRequest) {
