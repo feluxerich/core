@@ -24,7 +24,7 @@ const State: NextPage = ({ history }: any) => {
       </div>
       <div className="grid w-full grid-cols-1 gap-2 h-3/5">
         {Object.values(history).map((element: any) => {
-          if (element.name.toLowerCase().includes(input.toLowerCase().replace(' ', '-')) || !input) {
+          if (element.name.toLowerCase().includes(input.toLowerCase().replaceAll(' ', '-')) || !input) {
             return (
               <div className="flex flex-col w-full gap-2 p-5 border border-primary-600 bg-primary-800 rounded-8" key={element.name}>
                 <div className="flex flex-row items-center w-full">

@@ -44,7 +44,8 @@ const Login = () => {
         }
 
         setDisabled(false);
-      });
+      })
+      .catch(reason => console.log(reason));
   };
 
   return (

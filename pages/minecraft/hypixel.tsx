@@ -46,7 +46,7 @@ function Hypixel() {
             Status: <div className={`h-3 w-3 rounded-full ml-2 ${data?.status === false ? 'bg-default' : 'bg-green-600'}`} />
           </span>
           <span className="text-sm">
-            Rank: <span className="font-normal">{data?.rank ? data.rank.replace('_', '').replace('PLUS', '+') : 'No Rank'}</span>
+            Rank: <span className="font-normal">{data?.rank ? data.rank.replaceAll('_', '').replace('PLUS', '+') : 'No Rank'}</span>
           </span>
           <span className="text-sm">
             Guild: <span className="font-normal">{data?.guild ? data.guild : 'No Guild'}</span>

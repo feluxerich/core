@@ -1,15 +1,15 @@
 :root {
   --color-button-text: #ffffff;
 
-  --color-primary-100: #dee3ea;
+  --color-primary-100: #ebeef5;
   --color-primary-200: #b2bdcd;
-  --color-primary-300: #8181b1;
+  --color-primary-300: #767e94;
   --color-primary-400: #61619e;
   --color-primary-500: #4e4e7e;
   --color-primary-600: #3a3a5f;
   --color-primary-700: #27273f;
   --color-primary-800: #131320;
-  --color-primary-900: #0a0a10;
+  --color-primary-900: #0d0d16;
 }
 
 :root {
