@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import config from '@config/middleware';
 import { verifyAuth } from '@utils/core/worker';
+import { baseUrl } from '@utils/fetch';
 
 export async function middleware(req: NextRequest) {
   if (!req.page.name || !config.restricted.includes(req.page.name)) return;
@@ -11,7 +12,7 @@ export async function middleware(req: NextRequest) {
   }
 
   if (!verified) {
-    return NextResponse.redirect('/login');
+    return NextResponse.redirect(`${baseUrl(req)}/login`);
   }
 
   return NextResponse.next();
