@@ -56,3 +56,4 @@ betterworker.sh
 .idea
 
 **/__pycache__
+*.sql
