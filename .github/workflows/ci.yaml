@@ -36,6 +36,9 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
+      - name: Install Dependencies
+        run: npm i
+
       - name: Build and Publish
         run: npm run electron:build
 
