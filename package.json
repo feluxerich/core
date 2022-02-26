@@ -20,7 +20,7 @@
     "lint": "next lint",
     "format": "prettier --write --single-quote --config .prettierrc.js --ignore-path .prettierignore .",
     "electron": "electron .",
-    "electron:build": "electron-builder --publish always"
+    "electron:build": "electron-builder --publish always --linux deb tar.xz"
   },
   "dependencies": {
     "@hookstate/core": "^3.0.13",
