@@ -57,3 +57,5 @@ betterworker.sh
 
 **/__pycache__
 *.sql
+
+dist/*

@@ -5,6 +5,7 @@ edit_uri: edit/main/docs/docs # TODO: Maybe change this to blob
 nav:
   - Home: index.md
   - Changelog:
+      - v1.11: 'changelog/v1.11.md'
       - v1.10: 'changelog/v1.10.md'
       - v1.9: 'changelog/v1.9.md'
       - v1.8: 'changelog/v1.8.md'

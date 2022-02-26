@@ -30,6 +30,15 @@ jobs:
       - name: Lint Next.js App
         run: npm run lint
 
+  electron:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Build and Publish
+        run: npm run electron:build
+
   docker:
     if: ${{ github.event_name != 'pull_request' }}
     runs-on: ubuntu-latest

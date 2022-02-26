@@ -1,6 +1,10 @@
 {
   "name": "core",
   "version": "0.0.1",
+  "author": {
+    "name": "Feluxerich",
+    "url": "https://github.com/feluxerich"
+  },
   "private": false,
   "homepage": "core.m2vi.me",
   "description": "Used to know",
@@ -8,14 +12,15 @@
     "url": "https://github.com/feluxerich/core"
   },
   "license": "MIT",
-  "main": "electron.ts",
+  "main": "electron.js",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
     "format": "prettier --write --single-quote --config .prettierrc.js --ignore-path .prettierignore .",
-    "electron": "electron ."
+    "electron": "electron .",
+    "electron:build": "electron-builder --publish always"
   },
   "dependencies": {
     "@hookstate/core": "^3.0.13",
@@ -70,6 +75,7 @@
     "autoprefixer": "^10.3.7",
     "babel-plugin-styled-components": "^2.0.1",
     "electron": "^17.1.0",
+    "electron-builder": "^22.14.13",
     "eslint": "8.4.1",
     "eslint-config-next": "12.0.7",
     "postcss": "^8.2.15",
