@@ -31,7 +31,7 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: electron-build
-          path: dist/
+          path: dist/core-Setup-*.exe
       
       - name: Create Release
         id: create_release
@@ -39,7 +39,6 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ github.token }}
         with:
-          tag_name: ${{ github.ref }}
           release_name: Release ${{ github.ref }}
 
       - name: Upload Release Asset
@@ -49,6 +48,6 @@ jobs:
           GITHUB_TOKEN: ${{ github.token }}
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: dist/
+          asset_path: dist/core-Setup-*.exe
           asset_name: electron-build
-          asset_content_type: application/zip
+          asset_content_type: application/exe
