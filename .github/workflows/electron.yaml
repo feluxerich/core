@@ -19,10 +19,33 @@ jobs:
         with:
           node-version: 16
 
-      - name: Build/release Electron app
-        uses: samuelmeuli/action-electron-builder@v1
+      - name: Install Dependencies
+        run: npm i
+      
+      - name: Build
+        run: npm run electron:build
+      
+      - name: upload artifacts
+        uses: actions/upload-artifact@v2
         with:
-          github_token: ${{ github.token }}
-          build_script_name: "electron:build"
+          name: electron-build
+          path: dist/
+      
+      - name: Create Release
+        id: create_release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        with:
+          tag_name: ${{ github.ref }}
+          release_name: Release ${{ github.ref }}
 
-          release: ${{ startsWith(github.ref, 'refs/tags/v') }}
+      - name: Upload Release Asset
+        id: upload-release-asset 
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: dist/
+          asset_name: electron-build
