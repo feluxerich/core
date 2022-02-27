@@ -21,7 +21,7 @@
     "lint": "next lint",
     "format": "prettier --write --single-quote --config .prettierrc.js --ignore-path .prettierignore .",
     "electron:dev": "electron .",
-    "electron:build": "electron-builder --windows nsis"
+    "electron:build": "electron-builder --windows nsis --upload never"
   },
   "dependencies": {
     "@hookstate/core": "^3.0.13",
