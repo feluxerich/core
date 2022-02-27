@@ -20,8 +20,8 @@
     "start": "next start",
     "lint": "next lint",
     "format": "prettier --write --single-quote --config .prettierrc.js --ignore-path .prettierignore .",
-    "electron": "electron .",
-    "electron:build": "electron-builder --publish always --linux deb tar.xz"
+    "electron:dev": "electron .",
+    "electron:build": "electron-builder --mwl"
   },
   "dependencies": {
     "@hookstate/core": "^3.0.13",
@@ -77,6 +77,7 @@
     "babel-plugin-styled-components": "^2.0.1",
     "electron": "^17.1.0",
     "electron-builder": "^22.14.13",
+    "electron-log": "^4.4.6",
     "eslint": "8.4.1",
     "eslint-config-next": "12.0.7",
     "postcss": "^8.2.15",
