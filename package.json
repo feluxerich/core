@@ -21,7 +21,7 @@
     "lint": "next lint",
     "format": "prettier --write --single-quote --config .prettierrc.js --ignore-path .prettierignore .",
     "electron:dev": "electron .",
-    "electron:build": "electron-builder --mwl"
+    "electron:build": "electron-builder -mwl"
   },
   "dependencies": {
     "@hookstate/core": "^3.0.13",
