@@ -23,6 +23,6 @@ jobs:
         uses: samuelmeuli/action-electron-builder@v1
         with:
           github_token: ${{ github.token }}
-          buildScriptName: "electron:build"
+          build_script_name: "electron:build"
 
           release: ${{ startsWith(github.ref, 'refs/tags/v') }}
