@@ -1,6 +1,6 @@
 import { NextApiRequest } from 'next';
 import jwt from '@tsndr/cloudflare-worker-jwt';
-import { NextRequest } from 'next/server';
+import type { NextRequest } from 'next/server';
 import { UserJwtPayload } from '@Types/base';
 
 export const verifyAuth = async (req: NextApiRequest | NextRequest) => {
