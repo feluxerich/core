@@ -24,7 +24,8 @@
       "@Types/*": ["types/*"],
       "@utils/*": ["utils/*"],
       "@models/*": ["models/*"],
-      "@config/*": ["config/*"]
+      "@config/*": ["config/*"],
+      "@data/*": ["data/*"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],

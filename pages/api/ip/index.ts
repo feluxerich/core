@@ -1,16 +1,9 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
-import { basicFetch } from '@utils/fetch';
+import { getClientIp } from 'request-ip';
 
-type Data = {
-  ip?: string;
-  error?: any;
-};
-
-export default async function handler(req: NextApiRequest, res: NextApiResponse<Data>) {
+export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   try {
-    const data = await basicFetch('https://api.m2vi.me/ip');
-
-    res.status(200).json(data);
+    res.status(200).json({ ip: getClientIp(req) });
   } catch ({ error }) {
     res.status(500).json({ error });
   }

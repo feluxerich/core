@@ -1,9 +1,8 @@
-import { NextRequest } from 'next/server';
 import jwt from '@tsndr/cloudflare-worker-jwt';
 import platform from 'platform';
 
 class Vitals {
-  worker(req: NextRequest) {
+  worker(req: any) {
     return {
       nextUrl: req.nextUrl.href,
       ip: req.ip,
