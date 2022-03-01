@@ -24,6 +24,7 @@
     "electron:build": "electron-builder"
   },
   "dependencies": {
+    "@headlessui/react": "^1.5.0",
     "@hookstate/core": "^3.0.13",
     "@m2vi/iva": "^1.0.9",
     "@octokit/rest": "^18.12.0",
@@ -59,8 +60,7 @@
     "systeminformation": "^5.9.15",
     "underscore": "^1.13.2",
     "uuid": "^8.3.2",
-    "validator": "^13.6.0",
-    "wappalyzer": "^6.10.16"
+    "validator": "^13.6.0"
   },
   "devDependencies": {
     "@tailwindcss/forms": "^0.4.0",

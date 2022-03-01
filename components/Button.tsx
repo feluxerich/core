@@ -8,6 +8,7 @@ const sizeClassnames = {
 
 const colorClassnames = {
   primary: 'text-button bg-accent hover:bg-accent-hover disabled:text-accent-disabled disabled:bg-accent-hover',
+  text: 'text-accent underline bg-transparent hover:text-accent-hover font-medium disabled:text-accent-disabled disabled:bg-accent-hover',
   secondary: 'text-button bg-primary-700 hover:bg-primary-600 disabled:text-primary-300',
   'secondary-800': 'text-button bg-primary-800 hover:bg-primary-600 disabled:text-primary-300',
 };

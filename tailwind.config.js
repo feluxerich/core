@@ -36,6 +36,7 @@ module.exports = {
       11: '60px',
       24: '24rem',
       100: '100px',
+      150: '150px',
       200: '200px',
       250: '250px',
       300: '350px',
@@ -45,10 +46,6 @@ module.exports = {
       DEFAULT: '1px',
       0: '0px',
       2: '2px',
-    },
-    boxShadow: {
-      accent: 'var(--shadow-accent)',
-      1: '0px 4px 14px rgba(0, 0, 0, 0.4)',
     },
     extend: {
       colors: {
@@ -87,6 +84,7 @@ module.exports = {
       },
       maxWidth: {
         xxs: '225px',
+        widget: '324px',
       },
       screens: { fmd: '860px', flg: '1125px', fxl: '1350px', f2xl: '1720px' },
     },
