@@ -1,7 +1,7 @@
 # Core
 
 ![CD](https://github.com/feluxerich/core/actions/workflows/ci.yaml/badge.svg)
-![Docs](https://github.com/feluxerich/core/actions/workflows/mkdocs.yaml/badge.svg)
+![Docs](https://github.com/feluxerich/core-docs/actions/workflows/mkdocs.yaml/badge.svg)
 [![License MIT](https://img.shields.io/github/license/feluxerich/core)](https://github.com/feluxerich/core/blob/master/LICENSE)
 [![Contributors](https://img.shields.io/github/contributors-anon/feluxerich/core)](https://github.com/feluxerich/core/graphs/contributors)
 
