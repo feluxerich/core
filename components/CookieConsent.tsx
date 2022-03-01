@@ -7,7 +7,9 @@ export const CookieConsent = () => {
   const [display, setDisplay] = useState(false);
 
   useEffect(() => {
-    setTimeout(() => setDisplay(Cookies.get('cookie-consent') !== 'true'), 1000);
+    const timeout = setTimeout(() => setDisplay(Cookies.get('cookie-consent') !== 'true'), 1000);
+
+    return () => clearTimeout(timeout);
   }, []);
 
   return display ? (

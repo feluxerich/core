@@ -31,13 +31,21 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse<
         error: 'Wrong password',
       });
     }
-    await core.updateAfterLogin(username, req);
+
+    const [avatar, ipLookup, updateResult] = await Promise.all([
+      discord.avatar(user.connections.discord),
+      ipClient.lookup(req),
+      core.updateAfterLogin(username, req),
+    ]);
 
     const jwtToken = jwt.sign(
       {
-        username: user.username,
-        avatar: await discord.avatar(user.connections.discord),
-        ip: await ipClient.lookup(req),
+        // including password_hash btw
+        ...user,
+        password_hash: null,
+        history: [],
+        avatar: avatar,
+        ip: ipLookup,
         session: {
           start_time: Date.now(),
         },
