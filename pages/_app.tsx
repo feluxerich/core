@@ -14,6 +14,7 @@ import nProgress from 'nprogress';
 import Router from 'next/dist/client/router';
 import { Layout } from '@components/Layout';
 import { NextSeo } from 'next-seo';
+import React from 'react';
 
 nProgress.configure({ showSpinner: false });
 
@@ -30,7 +31,7 @@ type AppPropsWithLayout = AppProps & {
 };
 
 function MyApp({ Component, pageProps }: AppPropsWithLayout) {
-  const DynamicLayout = Component.noLayout ? ({ children }: any) => children : ({ children }: any) => <Layout>{children}</Layout>;
+  const DynamicLayout = Component.noLayout ? React.Fragment : Layout;
 
   return (
     <>

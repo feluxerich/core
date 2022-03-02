@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import { Button } from './Button';
+import { Button } from '../Button';
 import Cookies from 'js-cookie';
 import { Fragment, useEffect, useState } from 'react';
 import { Dialog, Transition } from '@headlessui/react';

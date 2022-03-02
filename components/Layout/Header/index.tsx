@@ -8,7 +8,7 @@ const Header = () => {
   const user = useUser();
 
   return (
-    <div className="absolute top-0 left-0 right-0 w-full px-11 pt-6 flex justify-between items-center h-8">
+    <div className="absolute top-0 left-0 right-0 w-full px-11 mt-6 flex justify-between items-center h-8">
       <div className="w-full max-w-screen-fxs items-center flex">
         <Logo className="mr-2" />
         <span className="text-base font-bold text-accent leading-4">Core</span>

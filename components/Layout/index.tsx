@@ -1,5 +1,5 @@
 import { FunctionComponent } from 'react';
-import Full from './Full';
+import Full from '../Full';
 import CookieConsent from './CookieConsent';
 import Header from './Header';
 
