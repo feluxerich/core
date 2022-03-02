@@ -1,5 +1,5 @@
 import { ObjectId } from 'mongoose';
-import { MongooseBase } from './base';
+import { MongooseBase, ObjectBase } from './base';
 
 export interface HistoryEntry {
   ip: string | null;
@@ -11,9 +11,7 @@ export interface User extends MongooseBase {
   username: string;
   password_hash: string;
   creation_date: number;
-  connections: {
-    [name: string]: string;
-  };
+  connections: ObjectBase<string>;
   history: Array<HistoryEntry>;
 }
 

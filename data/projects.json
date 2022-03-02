@@ -6,7 +6,11 @@
       "name": "Core",
       "route": "/",
       "tags": [],
-      "language": ["en"]
+      "language": ["en"],
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/feluxerich/core"
+      }
     }
   ]
 }

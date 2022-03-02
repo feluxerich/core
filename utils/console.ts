@@ -1,6 +1,10 @@
 export class Console {
   constructor() {}
 
+  initialize(job: string) {
+    console.log('%c[INITIALIZED]', 'color: #5da7f2', job);
+  }
+
   fetch(data: any, service: string, ...props: any) {
     console.log('%c[FETCH]', 'color: #07821d', { data: data, service }, ...props);
   }

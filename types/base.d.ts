@@ -12,3 +12,7 @@ export interface UserJwtPayload {
   jti: string;
   iat: number;
 }
+
+export interface ObjectBase<T> {
+  [key: string]: T;
+}

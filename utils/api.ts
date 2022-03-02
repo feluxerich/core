@@ -37,10 +37,7 @@ export class Ip {
   }
 
   async lookup(req: NextApiRequest) {
-    const burl = baseUrl(req);
-    const ip = getClientIp(req);
-
-    return await basicFetch(`${burl}/api/ip/${ip}`);
+    return await basicFetch(`${baseUrl(req)}/api/ip/${getClientIp(req)}`);
   }
 }
 

@@ -16,7 +16,6 @@ class Coingecko {
       const data = await this.fetch('coins/markets', {
         ids: ids.join(','),
         vs_currency: 'usd',
-
         price_change_percentage: '7d',
       });
 
