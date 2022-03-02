@@ -72,7 +72,7 @@ export const CookieConsent = () => {
                 <Button className="w-full uppercase" color="primary" onClick={setCookie}>
                   Accept
                 </Button>
-                <Button className="w-full" color="text">
+                <Button className="w-full" color="text" onClick={() => window.location.replace('https://www.youtube.com/watch?v=yPYZpwSpKmA')}>
                   Decline
                 </Button>
               </div>
