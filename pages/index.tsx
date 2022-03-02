@@ -6,29 +6,29 @@ const Home = () => {
   const apps = useApps();
 
   return (
-    <div className="w-full h-full pt-11 flex justify-between items-start">
-      <div className="max-w-screen-fxs w-full mr-8"></div>
-      <div className="max-w-screen-fmd w-full flex flex-col mr-8">
-        <div className="flex justify-between items-center">
-          <span className="font-bold text-xl">Apps</span>
-          <span className="font-semibold text-sm text-primary-300">69 Apps</span>
+    <div className="flex items-start justify-between w-full h-full pt-11">
+      <div className="w-full mr-8 max-w-screen-fxs"></div>
+      <div className="flex flex-col w-full mr-8 max-w-screen-fmd">
+        <div className="flex items-center justify-between">
+          <span className="text-xl font-bold">Apps</span>
+          <span className="text-sm font-semibold text-primary-300">{apps.length}</span>
         </div>
-        <div className="w-full mt-5 grid grid-flow-col">
+        <div className="grid w-full grid-flow-col mt-5">
           {apps.map(({ id, key, name, route, desc, tags, language, repository, owner }) => {
             return (
-              <div className="w-full bg-primary-800 rounded-8 p-4 flex flex-col" key={id}>
+              <div className="flex flex-col w-full p-4 bg-primary-800 rounded-8" key={id}>
                 <div className="flex mb-2">
-                  <span className="font-bold text-sm text-primary-300">{owner}/</span>
-                  <span className="font-bold text-sm text-primary-100">{key}</span>
+                  <span className="text-sm font-bold text-primary-300">{owner}/</span>
+                  <span className="text-sm font-bold text-primary-100">{key}</span>
                 </div>
-                <span className="text-primary-300 text-sm mb-4">{desc}</span>
+                <span className="mb-4 text-sm text-primary-300">{desc}</span>
                 <div className="flex"></div>
               </div>
             );
           })}
         </div>
       </div>
-      <div className="max-w-screen-fsm w-full grid grid-flow-row gap-6 mr-0">
+      <div className="grid w-full grid-flow-row gap-6 mr-0 max-w-screen-fsm">
         <User />
         <Commits />
       </div>
