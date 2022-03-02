@@ -55,24 +55,24 @@ export const CookieConsent = () => {
             leaveFrom="opacity-100 scale-100"
             leaveTo="opacity-0 scale-95"
           >
-            <div className="inline-block text-center w-full max-w-widget px-5 py-4 overflow-hidden align-middle transition-all transform bg-primary-800 shadow-xl rounded-8">
-              <div className="w-full relative h-150 mb-4">
+            <div className="inline-block w-full px-5 py-4 overflow-hidden text-center align-middle transition-all transform shadow-xl max-w-widget bg-primary-800 rounded-8">
+              <div className="relative w-full mb-4 h-150">
                 <Image src="/svg/cookieBanner.svg" alt="Banner" objectFit="contain" layout="fill" />
               </div>
 
-              <span className="font-bold text-xl">Cookies</span>
+              <span className="text-xl font-bold">Cookies</span>
 
               <div className="mt-3">
-                <p className="text-base text-primary-200 text-center">
+                <p className="text-base text-center text-primary-200">
                   This website uses cookies to give you the best experience. By the way, it does not work without lol.
                 </p>
               </div>
 
-              <div className="mt-4 grid grid-flow-row gap-1">
+              <div className="grid grid-flow-row gap-1 mt-4">
                 <Button className="w-full uppercase" color="primary" onClick={setCookie}>
                   Accept
                 </Button>
-                <Button className="w-full" color="text">
+                <Button className="w-full" color="text" onClick={() => window.location.href='https://www.youtube.com/watch?v=dQw4w9WgXcQ'}>
                   Decline
                 </Button>
               </div>
