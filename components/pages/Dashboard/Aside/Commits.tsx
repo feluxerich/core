@@ -4,7 +4,7 @@ import Image from 'next/image';
 
 const Commits = () => {
   const data = useCommits();
-  console.log(data);
+
   return (
     <div className="flex-col w-full overflow-hidden bg-primary-800 rounded-8">
       <div className="px-4 py-3">

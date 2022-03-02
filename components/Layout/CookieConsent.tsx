@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import { Button } from './Button';
+import { Button } from '../Button';
 import Cookies from 'js-cookie';
 import { Fragment, useEffect, useState } from 'react';
 import { Dialog, Transition } from '@headlessui/react';
@@ -72,7 +72,7 @@ export const CookieConsent = () => {
                 <Button className="w-full uppercase" color="primary" onClick={setCookie}>
                   Accept
                 </Button>
-                <Button className="w-full" color="text" onClick={() => window.location.href='https://www.youtube.com/watch?v=dQw4w9WgXcQ'}>
+                <Button className="w-full" color="text" onClick={() => window.location.replace('https://www.youtube.com/watch?v=yPYZpwSpKmA')}>
                   Decline
                 </Button>
               </div>

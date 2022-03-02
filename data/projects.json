@@ -13,6 +13,20 @@
         "url": "https://github.com/feluxerich/core"
       },
       "owner": "feluxerich"
+    },
+    {
+      "id": 27,
+      "key": "docs",
+      "name": "Core-Docs",
+      "route": "https://docs.core.fluxi.ml/",
+      "desc": "The official documentation of the Core-Project",
+      "tags": ["docs", "mkdocs", "python", "core"],
+      "language": ["en"],
+      "repository": {
+        "type": "git",
+        "url": "https://github.com/feluxerich/core-docs"
+      },
+      "owner": "feluxerich"
     }
   ]
 }
