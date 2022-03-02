@@ -25,9 +25,11 @@
   },
   "dependencies": {
     "@headlessui/react": "^1.5.0",
+    "@heroicons/react": "^1.0.5",
     "@hookstate/core": "^3.0.13",
     "@m2vi/iva": "^1.0.9",
     "@octokit/rest": "^18.12.0",
+    "@svgr/webpack": "^6.2.1",
     "@szhsin/react-menu": "^2.3.0",
     "@tsndr/cloudflare-worker-jwt": "^1.1.4",
     "@types/qs": "^6.9.7",

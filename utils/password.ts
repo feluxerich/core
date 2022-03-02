@@ -2,7 +2,8 @@ import * as bcrypt from 'bcrypt';
 
 export class Password {
   hash(plain: string) {
-    return bcrypt.hashSync(plain, 12);
+    // check
+    return bcrypt.hashSync(plain, bcrypt.genSaltSync(12));
   }
 
   compare(plain: string, hash: string) {

@@ -7,3 +7,5 @@ export const aspectRatio = (width: number, height: number) => {
 export const gcd = (a: number, b: number): number => {
   return b == 0 ? a : gcd(b, a % b);
 };
+
+export const fVoid = () => {};

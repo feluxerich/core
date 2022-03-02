@@ -16,7 +16,7 @@ export const useLanyard = (id: string) => {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      fetchData().then(setData);
+      fetchData().then(setData).catch(console.log);
     }, 5000);
     return () => clearInterval(interval);
   });

@@ -3,6 +3,7 @@ import { Button } from './Button';
 import Cookies from 'js-cookie';
 import { Fragment, useEffect, useState } from 'react';
 import { Dialog, Transition } from '@headlessui/react';
+import { fVoid } from '@utils/utils';
 
 export const CookieConsent = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -27,7 +28,7 @@ export const CookieConsent = () => {
 
   return (
     <Transition appear show={isOpen} as={Fragment}>
-      <Dialog as="div" className="fixed inset-0 z-50 overflow-y-auto" onClose={() => {}}>
+      <Dialog as="div" className="fixed inset-0 z-50 overflow-y-auto" onClose={fVoid}>
         <div className="min-h-screen px-4 text-center">
           <Transition.Child
             as={Fragment}

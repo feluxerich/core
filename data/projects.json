@@ -1,0 +1,12 @@
+{
+  "data": [
+    {
+      "id": 636,
+      "key": "core",
+      "name": "Core",
+      "route": "/",
+      "tags": [],
+      "language": ["en"]
+    }
+  ]
+}

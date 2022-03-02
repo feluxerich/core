@@ -14,7 +14,8 @@ type Data = {
 async function hypixel(req: NextApiRequest, res: NextApiResponse<Data>) {
   const hypixelAPIKey = process.env.HYPIXEL_API_KEY;
 
-  const { name } = req.query;
+  const query = Object.freeze(req.query);
+  const name = query.name.toString();
 
   try {
     var data = await (await fetch(`https://api.mojang.com/users/profiles/minecraft/${name}`)).json();

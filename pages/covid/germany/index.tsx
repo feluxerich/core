@@ -11,20 +11,20 @@ const Germany: NextPage = ({ history, now }: any) => {
   var cases: any = [];
   var recovered: any = [];
 
-  history?.incidence.map((obj: any) => {
+  history?.incidence.forEach((obj: any) => {
     incidence.push(obj.weekIncidence);
     dates.push(obj.date.split('T')[0]);
   });
 
-  history?.deaths.map((obj: any) => {
+  history?.deaths.forEach((obj: any) => {
     deaths.push(obj.deaths);
   });
 
-  history?.cases.map((obj: any) => {
+  history?.cases.forEach((obj: any) => {
     cases.push(obj.cases);
   });
 
-  history?.recovered.map((obj: any) => {
+  history?.recovered.forEach((obj: any) => {
     recovered.push(obj.recovered);
   });
 

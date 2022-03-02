@@ -1,5 +1,5 @@
 const { app, BrowserWindow, dialog } = require('electron');
-const autoUpdater = require("electron-updater");
+const autoUpdater = require('electron-updater');
 
 const createWindow = () => {
   const win = new BrowserWindow({
@@ -22,10 +22,13 @@ const createWindow = () => {
   win.loadURL('https://fluxi.me/');
 };
 
-app.whenReady().then(() => {
-  createWindow();
-  autoUpdater.checkForUpdatesAndNotify();
-});
+app
+  .whenReady()
+  .then(() => {
+    createWindow();
+    autoUpdater.checkForUpdatesAndNotify();
+  })
+  .catch(console.log);
 
 app.on('window-all-closed', () => {
   if (process.platform !== 'darwin') app.quit();
