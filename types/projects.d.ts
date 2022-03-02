@@ -1,5 +1,5 @@
 export interface Repository {
-  type: 'git';
+  type: string;
   url: string;
 }
 
@@ -8,7 +8,9 @@ export interface Project {
   key: string;
   name: string;
   route: string;
+  desc: string;
   tags: string[];
   language: string[];
   repository: Repository;
+  owner: string;
 }

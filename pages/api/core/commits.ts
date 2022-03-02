@@ -2,7 +2,7 @@ import { Octokit } from '@octokit/rest';
 import type { NextApiRequest, NextApiResponse } from 'next';
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
-  const octokit = new Octokit();
+  const octokit = new Octokit({ auth: process.env.GITHUB_API_KEY });
 
   const commits = (await octokit.repos.listCommits({ owner: 'Feluxerich', repo: 'core', per_page: 100 })).data;
 

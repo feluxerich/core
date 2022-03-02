@@ -4,7 +4,7 @@ const withPWA = require('next-pwa');
 module.exports = withPWA({
   reactStrictMode: true,
   images: {
-    domains: ['cdn.discordapp.com', 'crafatar.com', 'api.qrserver.com'],
+    domains: ['cdn.discordapp.com', 'crafatar.com', 'api.qrserver.com', 'avatars.githubusercontent.com'],
   },
   pwa: {
     dest: 'public',

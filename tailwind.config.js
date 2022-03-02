@@ -21,6 +21,7 @@ module.exports = {
       '7xl': '5rem',
     },
     spacing: {
+      '03': '3px',
       0: '0px',
       1: '5px',
       2: '10px',
@@ -86,7 +87,7 @@ module.exports = {
         xxs: '225px',
         widget: '324px',
       },
-      screens: { fmd: '860px', flg: '1125px', fxl: '1350px', f2xl: '1720px' },
+      screens: { fxs: '235px', fsm: '365px', fmd: '640px', DEFAULT: '1440px' },
     },
   },
   variants: {

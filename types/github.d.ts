@@ -1,4 +1,4 @@
-export interface CoreCommits {
+export interface CoreCommit {
   sha: string;
   author: {
     name: string | null;
