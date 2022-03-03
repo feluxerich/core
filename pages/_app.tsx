@@ -15,6 +15,7 @@ import Router from 'next/dist/client/router';
 import { Layout } from '@components/Layout';
 import { NextSeo } from 'next-seo';
 import React from 'react';
+import { QueryProvider } from '@context/useQuery';
 
 nProgress.configure({ showSpinner: false });
 
@@ -35,9 +36,11 @@ function MyApp({ Component, pageProps }: AppPropsWithLayout) {
 
   return (
     <>
-      <DynamicLayout>
-        <Component {...pageProps} />
-      </DynamicLayout>
+      <QueryProvider>
+        <DynamicLayout>
+          <Component {...pageProps} />
+        </DynamicLayout>
+      </QueryProvider>
       <NextSeo defaultTitle="Core" title="Core" description="Used to know" />
     </>
   );
