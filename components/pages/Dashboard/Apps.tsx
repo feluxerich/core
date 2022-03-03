@@ -9,7 +9,7 @@ const Apps = () => {
         <span className="text-xl font-bold">Apps</span>
         <span className="text-sm font-semibold text-primary-300">{apps.length}</span>
       </div>
-      <div className="grid w-full grid-flow-col mt-5">
+      <div className="grid w-full grid-flow-row mt-5 gap-4">
         {apps.map(({ id, key, name, route, desc, tags, language, repository, owner }) => {
           return (
             <div className="flex flex-col w-full p-4 bg-primary-800 rounded-8" key={id}>
