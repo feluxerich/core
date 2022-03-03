@@ -6,3 +6,7 @@ export interface RawWidget {
 
   value: string;
 }
+
+export interface CryptoMarketPriceProps {
+  currency: string;
+}

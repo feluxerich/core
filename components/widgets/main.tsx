@@ -1,3 +1,4 @@
+import CryptoMarketPrice from './collection/CryptoMarketPrice';
 import Weather from './collection/Weather';
 
 const Widgets = () => {
@@ -8,7 +9,12 @@ const Widgets = () => {
           Widgets <span className="text-sm font-bold text-primary-300">(1)</span>
         </span>
       </div>
-      <Weather />
+      <div className="w-full grid grid-flow-row gap-5">
+        <Weather />
+        <CryptoMarketPrice currency="bitcoin" />
+        <CryptoMarketPrice currency="ethereum" />
+        <CryptoMarketPrice currency="dogecoin" />
+      </div>
     </div>
   );
 };

@@ -9,3 +9,9 @@ export const gcd = (a: number, b: number): number => {
 };
 
 export const fVoid = () => {};
+
+export const withPrefix = (n: number): string => {
+  const isPositive = Math.sign(n) === 1;
+
+  return `${isPositive ? '+' : ''}${n}`;
+};
