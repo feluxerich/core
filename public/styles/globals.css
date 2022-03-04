@@ -81,19 +81,3 @@ body,
   outline: 0;
   box-shadow: none;
 }
-
-.no-drag {
-  -webkit-user-drag: none !important;
-}
-
-#nprogress .bar {
-  background: var(--color-accent) !important;
-}
-#nprogress .peg {
-  box-shadow: 0 0 10px var(--color-accent), 0 0 5px var(--color-accent) !important;
-}
-
-#nprogress .spinner-icon {
-  border-top-color: var(--color-accent) !important;
-  border-left-color: var(--color-accent) !important;
-}

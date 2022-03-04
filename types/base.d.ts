@@ -16,3 +16,7 @@ export interface UserJwtPayload {
 export interface ObjectBase<T> {
   [key: string]: T;
 }
+
+export type ChildrenProps = {
+  children: React.ReactNode;
+};

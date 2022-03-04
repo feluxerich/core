@@ -10,6 +10,8 @@
   --color-primary-700: #27273f;
   --color-primary-800: #131320;
   --color-primary-900: #0d0d16;
+
+  --color-primary-modal: rgba(13, 13, 22, 0.8);
 }
 
 :root {

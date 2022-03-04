@@ -4,6 +4,7 @@ import Cookies from 'js-cookie';
 import { Fragment, useEffect, useState } from 'react';
 import { Dialog, Transition } from '@headlessui/react';
 import { fVoid } from '@utils/utils';
+import CookieBanner from '@assets/svg/cookieBanner.svg';
 
 export const CookieConsent = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -29,7 +30,7 @@ export const CookieConsent = () => {
   return (
     <Transition appear show={isOpen} as={Fragment}>
       <Dialog as="div" className="fixed inset-0 z-50 overflow-y-auto" onClose={fVoid}>
-        <div className="min-h-screen px-4 text-center">
+        <div className="min-h-screen px-4 text-center bg-modal transition-all duration-300">
           <Transition.Child
             as={Fragment}
             enter="ease-out duration-300"
@@ -56,8 +57,8 @@ export const CookieConsent = () => {
             leaveTo="opacity-0 scale-95"
           >
             <div className="inline-block w-full px-5 py-4 overflow-hidden text-center align-middle transition-all transform shadow-xl max-w-widget bg-primary-800 rounded-8">
-              <div className="relative w-full mb-4 h-150">
-                <Image src="/svg/cookieBanner.svg" alt="Banner" objectFit="contain" layout="fill" />
+              <div className="relative w-full mb-4 h-150 flex justify-center items-center">
+                <CookieBanner />
               </div>
 
               <span className="text-xl font-bold">Cookies</span>

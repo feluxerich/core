@@ -22,6 +22,7 @@ module.exports = {
     },
     spacing: {
       '03': '3px',
+      '016': '16px',
       '022': '22px',
       0: '0px',
       1: '5px',
@@ -88,7 +89,7 @@ module.exports = {
         xxs: '225px',
         widget: '324px',
       },
-      screens: { fxs: '235px', fsm: '365px', fmd: '640px', DEFAULT: '1440px' },
+      screens: { fxs: '255px', fsm: '345px', fmd: '640px', DEFAULT: '1440px' },
     },
   },
   variants: {
