@@ -1,8 +1,6 @@
 import Login from '@components/pages/Login';
 
-const login = () => {
-  return <Login />;
-};
+const login = () => <Login />;
 
 login.noLayout = true;
 
