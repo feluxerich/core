@@ -1,9 +1,13 @@
 import type { Project } from '@Types/projects';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { matchSorter } from 'match-sorter';
 
 export const useSearch = (apps: Project[]) => {
-  const [items, setItems] = useState(apps);
+  const [items, setItems] = useState<Project[]>([]);
+
+  useEffect(() => {
+    setItems(apps);
+  }, [apps]);
 
   const reset = () => setItems(apps);
 

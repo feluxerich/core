@@ -25,9 +25,9 @@ const Apps = () => {
         </span>
       </div>
       <div className="grid w-full grid-flow-row gap-4 mt-5">
-        {items.map(({ id, key, name, route, desc, tags, language, repository, owner }) => {
+        {items.map(({ id, key, name, route, desc, tags, language, repository, owner }, index) => {
           return (
-            <div className="relative w-full" key={id}>
+            <div className="relative w-full" key={index}>
               <div className="absolute top-0 right-0 p-4 cursor-pointer text-primary-300 hover:text-primary-200">
                 <IconGrabber className="w-3 h-3" />
               </div>
