@@ -13,7 +13,7 @@ export const useSearch = (apps: Apps) => {
 
   const search = (query: string) => {
     if (!query || query === '*') return reset();
-    const found = matchSorter(items, query, { keys: ['id', 'key', 'name', 'tags', 'owner'] });
+    const found = matchSorter(apps, query, { keys: ['id', 'key', 'name', 'tags', 'owner'] });
 
     setItems(found);
   };
