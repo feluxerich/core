@@ -3,9 +3,9 @@ name: CI
 on:
   push:
     branches:
-      - 'main'
+      - "main"
     tags:
-      - 'v*'
+      - "v*"
 
 env:
   NODE_VERSION: 14.x
@@ -81,6 +81,11 @@ jobs:
           rm -rf /tmp/.buildx-cache
           mv /tmp/.buildx-cache-new /tmp/.buildx-cache
 
+  ssh:
+    runs-on: ubuntu-latest
+    needs: ["docker"]
+
+    steps:
       - name: rerun core project
         uses: appleboy/ssh-action@master
         with:
@@ -89,5 +94,6 @@ jobs:
           key: ${{ secrets.SSH_PRIVATE_KEY}}
           port: ${{ secrets.SSH_PORT }}
           script: |
-            cd core-project/
-            ./restart.sh
+                cd core-project/
+                ./restart.sh
+
