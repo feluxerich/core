@@ -5,6 +5,7 @@ const createWindow = () => {
   const win = new BrowserWindow({
     fullscreen: true,
     autoHideMenuBar: true,
+    icon: __dirname + "/public/favicon.ico"
   });
 
   win.webContents.on('before-input-event', (event, input) => {

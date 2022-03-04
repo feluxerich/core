@@ -1,6 +1,6 @@
 {
   "name": "core",
-  "version": "0.0.1",
+  "version": "1.11.1",
   "author": {
     "name": "Feluxerich",
     "url": "https://github.com/feluxerich",
@@ -40,6 +40,7 @@
     "chart.js": "^3.6.0",
     "copy-to-clipboard": "^3.3.1",
     "crypto-js": "^4.1.1",
+    "electron-updater": "^4.6.5",
     "js-cookie": "^3.0.1",
     "jsonwebtoken": "^8.5.1",
     "match-sorter": "^6.3.1",
