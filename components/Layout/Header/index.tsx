@@ -14,7 +14,7 @@ const Header = () => {
         <span className="text-base font-bold text-accent leading-4">Core</span>
       </div>
       <div className="w-full max-w-screen-fmd">
-        <Input className="w-full" placeholder="Search for app name, language or tags" />
+        <Input />
       </div>
       <div className="w-full max-w-screen-fsm flex justify-end">
         <div className="flex items-center">
