@@ -2,7 +2,7 @@ import { useUser } from 'hooks/useUser';
 import Image from 'next/image';
 import { IoNotifications } from 'react-icons/io5';
 import { Input } from './Input';
-import Logo from '@public/svg/logo.svg';
+import Logo from '@assets/svg/logo.svg';
 
 const Header = () => {
   const user = useUser();

@@ -1,7 +1,6 @@
 import { useApps } from 'hooks/useApps';
 
-import IconGrabber from '@public/svg/grabber.svg';
-import Link from 'next/link';
+import IconGrabber from '@assets/svg/grabber.svg';
 import { useSearch } from 'hooks/useSearch';
 import { useQuery } from '@context/useQuery';
 import { useEffect } from 'react';
