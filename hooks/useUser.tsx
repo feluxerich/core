@@ -9,7 +9,6 @@ export const useUser = () => {
     const cookie = Cookies.get('jwt');
     if (!cookie) return;
     const decoded = jwt.decode(cookie);
-    console.log(decoded);
     setData(decoded);
   }, []);
 
