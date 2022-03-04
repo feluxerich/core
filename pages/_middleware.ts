@@ -11,7 +11,7 @@ export async function middleware(req: NextRequest) {
   }
 
   if (!verified) {
-    return NextResponse.redirect(`${req.url}login`);
+    return NextResponse.redirect(`/login`);
   }
 
   return NextResponse.next();

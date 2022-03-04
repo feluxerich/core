@@ -10,11 +10,11 @@ export async function middleware(req: NextRequest) {
   }
 
   if (!verified) {
-    return NextResponse.redirect(`${req.url}login`);
+    return NextResponse.redirect(`/login`);
   }
 
   if (!jwt.admin) {
-      return NextResponse.redirect(`${req.url}`)
+    return NextResponse.redirect(`/`);
   }
 
   return NextResponse.next();
