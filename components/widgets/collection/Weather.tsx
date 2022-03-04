@@ -6,7 +6,7 @@ const Weather = () => {
   const weather = useWeather();
 
   return (
-    <div className="flex flex-col items-center p-4 rounded-8 bg-primary-800 text-center">
+    <div className="flex flex-col items-center p-4 rounded-8 bg-primary-800 text-center col-span-2">
       <span className="text-primary-200 mb-4 leading-none">{weather?.location?.name}</span>
       <span className="font-semibold text-6xl leading-none mb-2">{weather?.current?.temp_c}°</span>
       <span className="text-base mb-5 leading-none">{weather?.current?.condition?.text}</span>

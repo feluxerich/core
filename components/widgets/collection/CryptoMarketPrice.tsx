@@ -9,7 +9,7 @@ const CryptoMarketPrice = ({ currency }: CryptoMarketPriceProps) => {
   const item = data?.[0];
 
   return (
-    <div className="flex items-center justify-between bg-primary-800 px-4 py-3 rounded-8">
+    <div className="flex items-center justify-between bg-primary-800 px-4 py-3 rounded-8 col-span-2">
       <div className="flex items-center h-full">
         <div className="h-6 w-6 rounded overflow-hidden bg-primary-700 mr-2">
           {item?.image ? <Image src={item?.image} alt=" " height={30} width={30} /> : null}

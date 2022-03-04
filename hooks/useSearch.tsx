@@ -1,9 +1,9 @@
-import type { Project } from '@Types/projects';
+import type { Apps } from '@Types/app';
 import { useEffect, useState } from 'react';
 import { matchSorter } from 'match-sorter';
 
-export const useSearch = (apps: Project[]) => {
-  const [items, setItems] = useState<Project[]>([]);
+export const useSearch = (apps: Apps) => {
+  const [items, setItems] = useState<Apps>([]);
 
   useEffect(() => {
     setItems(apps);
