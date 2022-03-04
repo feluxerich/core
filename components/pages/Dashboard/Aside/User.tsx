@@ -19,21 +19,21 @@ const User = () => {
         <span className="text-xs text-primary-300">@{user?.username}</span>
         <div className="grid grid-flow-col gap-1 mt-1">
           <div
-            className={`flex justify-center items-center rounded-5 h-3 w-6 ${
+            className={`flex justify-center items-center rounded-5 h-016 w-6 ${
               lanyard?.activities?.gaming ? 'text-white bg-accent' : 'text-primary-100 bg-primary-700'
             }`}
           >
             <IoGameController className="w-2 h-2" />
           </div>
           <div
-            className={`flex justify-center items-center rounded-5 h-3 w-6 ${
+            className={`flex justify-center items-center rounded-5 h-016 w-6 ${
               lanyard?.activities?.listening ? 'text-white bg-accent' : 'text-primary-100 bg-primary-700'
             }`}
           >
             <IoMusicalNotes className="w-2 h-2" />
           </div>
           <div
-            className={`flex justify-center items-center rounded-5 h-3 w-6 ${
+            className={`flex justify-center items-center rounded-5 h-016 w-6 ${
               lanyard?.activities?.working ? 'text-white bg-accent' : 'text-primary-100 bg-primary-700'
             }`}
           >
