@@ -51,29 +51,31 @@ const Login = () => {
   return (
     <Full className="flex items-center justify-center">
       <div className="flex flex-col w-full max-w-xs mb-2">
-        <div className="mb-2">
-          <Input
-            onChange={() => setErrorUsername(false)}
-            ref={usernameRef}
-            placeholder="Username"
-            type="text"
-            className={`mb-4 ${swiggle1}`}
-            error={errorUsername}
-            disabled={disabled}
-          />
-          <Input
-            onChange={() => setErrorPassword(false)}
-            ref={passwordRef}
-            placeholder="Password"
-            type="password"
-            className={`mb-4 ${swiggle2}`}
-            error={errorPassword}
-            disabled={disabled}
-          />
-        </div>
-        <Button className="w-full" onClick={handleSubmit}>
-          Login
-        </Button>
+        <form>
+          <div className="mb-2">
+            <Input
+              onChange={() => setErrorUsername(false)}
+              ref={usernameRef}
+              placeholder="Username"
+              type="text"
+              className={`mb-4 ${swiggle1}`}
+              error={errorUsername}
+              disabled={disabled}
+            />
+            <Input
+              onChange={() => setErrorPassword(false)}
+              ref={passwordRef}
+              placeholder="Password"
+              type="password"
+              className={`mb-4 ${swiggle2}`}
+              error={errorPassword}
+              disabled={disabled}
+            />
+          </div>
+          <Button className="w-full" onClick={handleSubmit} type="submit">
+            Login
+          </Button>
+        </form>
         <Link href="/signup" passHref>
           <span className="mt-4 font-bold text-center cursor-pointer text-accent">Don&apos;t have an account yet? Create one</span>
         </Link>
