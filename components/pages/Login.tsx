@@ -17,7 +17,8 @@ const Login = () => {
 
   const Router = useRouter();
 
-  const handleSubmit = () => {
+  const handleSubmit = (e: any) => {
+    e.preventDefault()
     if (!usernameRef.current || !passwordRef.current) return;
     setErrorUsername(false);
     setErrorPassword(false);
@@ -51,7 +52,7 @@ const Login = () => {
   return (
     <Full className="flex items-center justify-center">
       <div className="flex flex-col w-full max-w-xs mb-2">
-        <form>
+        <form onSubmit={handleSubmit}>
           <div className="mb-2">
             <Input
               onChange={() => setErrorUsername(false)}
@@ -72,7 +73,7 @@ const Login = () => {
               disabled={disabled}
             />
           </div>
-          <Button className="w-full" onClick={handleSubmit} type="submit">
+          <Button className="w-full" type="submit">
             Login
           </Button>
         </form>
