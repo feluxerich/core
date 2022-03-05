@@ -20,3 +20,7 @@ export interface ObjectBase<T> {
 export type ChildrenProps = {
   children: React.ReactNode;
 };
+
+export type ErrorType = {
+  error: string;
+};
