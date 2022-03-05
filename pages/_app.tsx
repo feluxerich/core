@@ -10,12 +10,15 @@ import '@styles/colors.css';
 import '@styles/components.css';
 import '@styles/animations.css';
 
-import nProgress from 'nprogress';
-import Router from 'next/dist/client/router';
-import { Layout } from '@components/Layout';
+import { Router } from 'next/router';
 import { NextSeo } from 'next-seo';
-import React from 'react';
+
 import { QueryProvider } from '@context/useQuery';
+
+import Layout from '@components/Layout';
+import Fragment from '@components/Fragment';
+
+import nProgress from 'nprogress';
 
 nProgress.configure({ showSpinner: false });
 
@@ -33,7 +36,7 @@ type AppPropsWithLayout = AppProps & {
 };
 
 function MyApp({ Component, pageProps }: AppPropsWithLayout) {
-  const DynamicLayout: any = Component.noLayout ? React.Fragment : Layout;
+  const DynamicLayout: any = Component.noLayout ? Fragment : Layout;
 
   return (
     <>

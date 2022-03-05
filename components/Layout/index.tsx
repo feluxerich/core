@@ -14,3 +14,5 @@ export const Layout: FunctionComponent = ({ center, ...props }: any) => {
     </Full>
   );
 };
+
+export default Layout;
