@@ -1,4 +1,3 @@
-import type { CoreCommit } from '@Types/github';
 import { basicFetch } from '@m2vi/iva';
 import { useEffect, useState } from 'react';
 

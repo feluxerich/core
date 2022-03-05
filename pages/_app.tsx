@@ -25,6 +25,7 @@ Router.events.on('routeChangeError', () => nProgress.done());
 
 type NextPageWithLayout = NextPage & {
   noLayout?: boolean;
+  center?: boolean;
 };
 
 type AppPropsWithLayout = AppProps & {
@@ -32,12 +33,12 @@ type AppPropsWithLayout = AppProps & {
 };
 
 function MyApp({ Component, pageProps }: AppPropsWithLayout) {
-  const DynamicLayout = Component.noLayout ? React.Fragment : Layout;
+  const DynamicLayout: any = Component.noLayout ? React.Fragment : Layout;
 
   return (
     <>
       <QueryProvider>
-        <DynamicLayout>
+        <DynamicLayout center={Component?.center}>
           <Component {...pageProps} />
         </DynamicLayout>
       </QueryProvider>
