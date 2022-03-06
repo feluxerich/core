@@ -4,6 +4,7 @@ import type { NextPage } from 'next';
 import 'nprogress/nprogress.css';
 import 'react-toastify/dist/ReactToastify.css';
 import 'tailwindcss/tailwind.css';
+import 'slick-carousel/slick/slick.css';
 
 import '@styles/globals.css';
 import '@styles/colors.css';

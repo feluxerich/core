@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import config from '@config/middleware';
-import { verifyAuth } from '@utils/core/worker';
+import { verifyAuth } from '@utils/api/core/worker';
 
 export async function middleware(req: NextRequest) {
   const [verified, error, jwt] = await verifyAuth(req);

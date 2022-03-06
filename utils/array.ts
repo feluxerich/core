@@ -1,3 +1,5 @@
+import _ from 'lodash';
+
 export const sortByKey = (array: Array<any>, key?: string) => {
   if (array && key) {
     return array.sort((a, b) => (a[key] > b[key] ? 1 : b[key] > a[key] ? -1 : 0));
@@ -31,3 +33,16 @@ export const shuffle = (array: any[]) => {
 
   return array;
 };
+
+export function moveToFront(list: any[], equalTo: any, path: string) {
+  return list.sort(function (x, y) {
+    return _.get(x, path) == equalTo ? -1 : _.get(y, path) == equalTo ? 1 : 0;
+  });
+}
+
+export function isIterable(obj: any) {
+  if (obj == null) {
+    return false;
+  }
+  return typeof obj[Symbol.iterator] === 'function';
+}
