@@ -14,6 +14,7 @@ import '@styles/animations.css';
 import { Router } from 'next/router';
 import { NextSeo } from 'next-seo';
 
+import { QueryClient, QueryClientProvider } from 'react-query';
 import { QueryProvider } from '@context/useQuery';
 
 import Layout from '@components/Layout';
@@ -36,16 +37,21 @@ type AppPropsWithLayout = AppProps & {
   Component: NextPageWithLayout;
 };
 
+const queryClient = new QueryClient();
+
 function MyApp({ Component, pageProps }: AppPropsWithLayout) {
   const DynamicLayout: any = Component.noLayout ? Fragment : Layout;
 
   return (
     <>
-      <QueryProvider>
-        <DynamicLayout center={Component?.center}>
-          <Component {...pageProps} />
-        </DynamicLayout>
-      </QueryProvider>
+      <QueryClientProvider client={queryClient}>
+        <QueryProvider>
+          <DynamicLayout center={Component?.center}>
+            <Component {...pageProps} />
+          </DynamicLayout>
+        </QueryProvider>
+      </QueryClientProvider>
+
       <NextSeo defaultTitle="Core" title="Core" description="Used to know" />
     </>
   );
