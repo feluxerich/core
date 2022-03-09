@@ -37,6 +37,7 @@
     "@tsndr/cloudflare-worker-jwt": "^1.1.6",
     "bcrypt": "^5.0.1",
     "chart.js": "^3.7.1",
+    "cheerio": "^1.0.0-rc.10",
     "copy-to-clipboard": "^3.3.1",
     "crypto-js": "^4.1.1",
     "electron-updater": "^4.6.5",
