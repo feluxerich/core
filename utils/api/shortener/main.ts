@@ -29,7 +29,7 @@ class Shortener {
       };
     }
 
-    if (!validator.isURL(link, { protocols: ['http', 'https'] })) {
+    if (!validator.isURL(link, { allow_underscores: true })) {
       return {
         valid: false,
         error: 'Link parameter is not valid',
@@ -57,13 +57,15 @@ class Shortener {
       const { valid, error, code } = this.validateInput(input);
       if (!valid) return { error, code };
 
-      if (!input?.alias) {
-        const exists = await database.exists({ link: input?.link, custom: false });
-        if (exists) return await database.findOne({ link: input?.link, custom: false });
-      }
+      var alias = this.alias.createAlias();
+      const existingAlias = await database.exists({ alias: input?.link });
 
-      return await database.insert({ link: input?.link, alias: this.alias.createAlias(input?.alias), custom: Boolean(input?.alias) });
+      if (existingAlias) alias = this.alias.createAlias();
+
+      return await database.insert({ link: input?.link, alias: alias });
     } catch (error) {
+      console.log(error);
+
       return { error: 'Alias already exists', code: 400 };
     }
   }

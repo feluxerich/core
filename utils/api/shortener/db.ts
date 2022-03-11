@@ -1,6 +1,7 @@
 import linkSchema from '@models/linkSchema';
 import mongoose, { FilterQuery } from 'mongoose';
 import { DeleteProps, LinkProps } from '@Types/shortener';
+import { connectToDatabase } from '@utils/database';
 
 class Database {
   get schema() {
@@ -8,17 +9,10 @@ class Database {
   }
 
   private async connect() {
-    await mongoose.connect(process.env.MONGO_URI!, {
-      dbName: 'smarthub',
-      autoIndex: false,
-    });
-
-    if (mongoose.connection) {
-      return mongoose.connection;
-    }
+    return await connectToDatabase();
   }
 
-  async insert({ link, alias, custom }: LinkProps) {
+  async insert({ link, alias }: LinkProps) {
     const db = await this.connect();
 
     if (!link || !alias) return { error: 'Missing params' };
@@ -26,7 +20,6 @@ class Database {
     const doc = {
       link,
       alias,
-      custom,
     };
 
     await db?.collection('shortener').insertOne(doc);

@@ -10,10 +10,8 @@ export class Alias {
     return crypto.randomBytes(bytes).toString('hex');
   }
 
-  createAlias(optionalAlias?: string) {
-    if (!optionalAlias) return this.randomBytes(3);
-
-    return optionalAlias;
+  createAlias() {
+    return this.randomBytes(3);
   }
 }
 

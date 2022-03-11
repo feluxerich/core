@@ -1,12 +1,11 @@
 export interface LinkProps {
   link: string;
   alias: string;
-  custom: boolean;
 }
 
 export interface InsertProps {
   link: string;
-  alias: string;
+  alias?: string;
 }
 
 export interface DeleteProps {
