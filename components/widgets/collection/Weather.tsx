@@ -1,5 +1,5 @@
 import { BiDroplet } from 'react-icons/bi';
-import { useQuery, useMutation, useQueryClient } from 'react-query';
+import { useQuery } from 'react-query';
 import { basicFetch } from '@m2vi/iva';
 
 const Weather = () => {

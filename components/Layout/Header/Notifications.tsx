@@ -1,11 +1,21 @@
 import { Menu, Transition } from '@headlessui/react';
 import { Fragment } from 'react';
 import { IoGitCommit, IoNotifications } from 'react-icons/io5';
-import { useCommits } from 'hooks/useCommits';
 import moment from 'moment';
+import { useQuery } from 'react-query';
+import { basicFetch } from '@m2vi/iva';
+import { Commits } from '@Types/core';
 
 const Notifications = () => {
-  const commits = useCommits();
+  const { data: commits } = useQuery(
+    `gh-commits`,
+    async (): Promise<Commits> => {
+      const data = await basicFetch<any>(`/api/core/commits`);
+
+      return data?.data;
+    },
+    { refetchInterval: 15000, refetchOnWindowFocus: true, initialData: [] },
+  );
 
   return (
     <div className="flex justify-end">
@@ -36,7 +46,7 @@ const Notifications = () => {
                       <div className="w-full py-3 px-4 border-b border-primary-700">
                         <span className="text-xl font-bold">Notifications</span>
                       </div>
-                      {commits.slice(0, 20).map(({ sha, author, commit }, index) => (
+                      {commits?.slice(0, 20).map(({ sha, author, commit }, index) => (
                         <Menu.Item key={index}>
                           <div className="w-full py-3 px-4 hover:bg-primary-700 cursor-pointer">
                             <div className="flex items-center justify-between h-full">
