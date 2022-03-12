@@ -51,7 +51,7 @@ function MyApp({ Component, pageProps }: AppPropsWithLayout) {
             <Component {...pageProps} />
           </DynamicLayout>
         </QueryProvider>
-        <ReactQueryDevTools />
+        <ReactQueryDevtools />
       </QueryClientProvider>
 
       <NextSeo defaultTitle="Core" title="Core" description="Used to know" />
