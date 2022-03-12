@@ -15,6 +15,7 @@ import { Router } from 'next/router';
 import { NextSeo } from 'next-seo';
 
 import { QueryClient, QueryClientProvider } from 'react-query';
+import { ReactQueryDevtools } from 'react-query/devtools'
 import { QueryProvider } from '@context/useQuery';
 
 import Layout from '@components/Layout';
@@ -50,6 +51,7 @@ function MyApp({ Component, pageProps }: AppPropsWithLayout) {
             <Component {...pageProps} />
           </DynamicLayout>
         </QueryProvider>
+        <ReactQueryDevTools />
       </QueryClientProvider>
 
       <NextSeo defaultTitle="Core" title="Core" description="Used to know" />
