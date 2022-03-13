@@ -37,7 +37,7 @@ class Shortener {
       };
     }
 
-    if (alias && !alias?.match(new RegExp(`[a-zA-Z0-9\-_]`))) {
+    if (alias && !alias?.match(new RegExp(`[a-zA-Z0-9-_]`))) {
       return {
         valid: false,
         error: 'Alias is malformed',
