@@ -1,10 +1,20 @@
+import { basicFetch } from '@m2vi/iva';
 import { CryptoMarketPriceProps } from '@Types/widgets';
 import { withPrefix } from '@utils/utils';
-import useFetch from 'hooks/useFetch';
 import Image from 'next/image';
+import QueryString from 'qs';
+import { useQuery } from 'react-query';
 
 const CryptoMarketPrice = ({ currency }: CryptoMarketPriceProps) => {
-  const { data, error } = useFetch<any[]>(`/api/coingecko?ids=${encodeURIComponent(currency)}`);
+  const { data } = useQuery(
+    `cmp-${currency}`,
+    async (): Promise<any> => {
+      const data = await basicFetch(`/api/coingecko?${QueryString.stringify({ ids: currency })}`);
+      currency;
+      return data;
+    },
+    { refetchInterval: 30000, refetchOnWindowFocus: true },
+  );
 
   const item = data?.[0];
 

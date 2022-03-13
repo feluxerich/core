@@ -1,11 +1,26 @@
-import { useLanyard } from 'hooks/useLanyard';
+import { PresenceB } from '@Types/lanyard';
+import { basicFetch } from '@utils/fetch';
 import { useUser } from 'hooks/useUser';
 import Image from 'next/image';
+import QueryString from 'qs';
 import { IoGameController, IoMusicalNotes, IoBuild } from 'react-icons/io5';
+import { useQuery } from 'react-query';
 
 const User = () => {
   const user = useUser();
-  const lanyard = useLanyard(user?.connections?.discord);
+  const { data: lanyard } = useQuery(
+    'lanyard',
+    async (): Promise<PresenceB | null> => {
+      const id = user?.connections?.discord;
+
+      if (!id) return null;
+
+      const data = await basicFetch(`/api/lanyard/rest?${QueryString.stringify({ id: user?.connections?.discord })}`);
+
+      return data;
+    },
+    { refetchInterval: 3000 },
+  );
 
   return (
     <div className="p-4 flex items-center w-full bg-primary-800 rounded-8">

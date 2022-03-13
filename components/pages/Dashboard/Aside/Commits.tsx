@@ -1,9 +1,19 @@
-import { useCommits } from 'hooks/useCommits';
+import { basicFetch } from '@m2vi/iva';
+import { Commits } from '@Types/core';
 import moment from 'moment';
 import Image from 'next/image';
+import { useQuery } from 'react-query';
 
 const Commits = () => {
-  const data = useCommits();
+  const { data } = useQuery(
+    `gh-commits`,
+    async (): Promise<Commits | null> => {
+      const data = await basicFetch<any>(`/api/core/commits`);
+
+      return data?.data;
+    },
+    { refetchInterval: 15000, refetchOnWindowFocus: true, initialData: [] },
+  );
 
   return (
     <div className="flex-col w-full overflow-hidden bg-primary-800 rounded-8">
