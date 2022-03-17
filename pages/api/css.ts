@@ -6,6 +6,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   const reset = new Object(req.query).hasOwnProperty('reset');
 
   if (!reset && cache.get('css')) {
+    res.setHeader('access-control-allow-origin', '*');
     res.setHeader('content-type', 'text/css');
     res.send(cache.get('css'));
     return;
@@ -18,6 +19,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
   cache.put('css', data);
 
+  res.setHeader('access-control-allow-origin', '*');
   res.setHeader('content-type', 'text/css');
   res.send(data);
 }
