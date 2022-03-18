@@ -1,5 +1,6 @@
 import historySchema from '@models/historySchema';
 import { HistoryItem } from '@Types/history';
+import { connectToDatabase } from '@utils/database';
 import { getClientIp, Request } from 'request-ip';
 
 class History {
@@ -37,7 +38,12 @@ class History {
     };
   }
 
+  private async init() {
+    return await connectToDatabase();
+  }
+
   public async insert(client_id: string, req: Request) {
+    await this.init();
     const item = this.get(client_id, req);
 
     const doc = new this.schema(item);
@@ -45,6 +51,12 @@ class History {
     //  await doc.save();
 
     return item;
+  }
+
+  public async setSessionEnd(sessionId: string) {
+    await this.init();
+
+    return await this.schema.updateOne({ sessionId }, { sessionEnd: Date.now() });
   }
 }
 
