@@ -45,10 +45,10 @@ class History {
   public async insert(client_id: string, req: Request) {
     await this.init();
     const item = this.get(client_id, req);
-
+    console.log(client_id);
     const doc = new this.schema(item);
-
-    //  await doc.save();
+    console.log(doc);
+    await doc.save();
 
     return item;
   }
