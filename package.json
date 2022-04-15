@@ -99,7 +99,7 @@
     "@types/validator": "^13.7.1",
     "autoprefixer": "^10.4.4",
     "babel-plugin-styled-components": "^2.0.6",
-    "electron": "^17.1.2",
+    "electron": "^18.0.4",
     "electron-builder": "^22.14.13",
     "electron-log": "^4.4.6",
     "eslint": "^8.11.0",
