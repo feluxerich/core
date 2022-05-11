@@ -76,17 +76,6 @@ export class Core {
     return item ? true : false;
   }
 
-  async updateAfterLogin(username: string, req: NextApiRequest) {
-    await this.init();
-    let history = (await this.findOne({ username })).history;
-    history = history && Array.isArray(history) ? history : [];
-    return await userSchema.updateOne({ username }, { history: history.concat(this.getHistoryEntry(req)) } as any);
-  }
-
-  getHistoryEntry(req: NextApiRequest) {
-    return { ip: getClientIp(req), ua: req.headers['user-agent'], date: Date.now() };
-  }
-
   config(req: NextApiRequest | any): JwtUser | null {
     const cookie = req.cookies.jwt;
     if (!cookie) return null;

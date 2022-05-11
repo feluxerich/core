@@ -22,7 +22,6 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     connections: {
       discord: discordId,
     },
-    history: [core.getHistoryEntry(req)],
   });
 
   await obj.save();

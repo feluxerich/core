@@ -2,7 +2,6 @@ import type { NextApiRequest, NextApiResponse } from 'next';
 import bcrypt from 'bcrypt';
 import jwt from 'jsonwebtoken';
 import { core, discord, ipClient } from '@utils/api';
-import history from '@utils/api/history/main';
 
 type Data = {
   token?: any;
@@ -33,24 +32,14 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse<
       });
     }
 
-    const [avatar, ipLookup, updateResult] = await Promise.all([
-      discord.avatar(user.connections.discord),
-      ipClient.lookup(req),
-      core.updateAfterLogin(username, req),
-    ]);
-
-    const { sessionId, client_ip, client_ua } = await history.insert(user.username, req);
+    const avatar = await Promise.all([discord.avatar(user.connections.discord)]);
 
     const jwtToken = jwt.sign(
       {
         // including password_hash btw
         ...user,
         password_hash: null,
-        history: [],
         avatar: avatar,
-        ip: client_ip,
-        ua: client_ua,
-        sessionId: sessionId,
       },
       process.env.JWT_SECRET_KEY!,
       { expiresIn: '1d' },
