@@ -40,6 +40,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse<
         ...user,
         password_hash: null,
         avatar: avatar,
+        history: [],
       },
       process.env.JWT_SECRET_KEY!,
       { expiresIn: '1d' },
