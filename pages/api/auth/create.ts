@@ -32,7 +32,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse<
       });
     }
 
-    const avatar = await Promise.all([discord.avatar(user.connections.discord)]);
+    const [avatar] = await Promise.all([discord.avatar(user.connections.discord)]);
 
     const jwtToken = jwt.sign(
       {
