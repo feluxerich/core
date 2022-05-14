@@ -1,11 +1,11 @@
 import { Button } from '@components/Button';
 import { Input } from '@components/Input';
+import { NextPageWithLayout } from '@components/Layout/LayoutTypes';
 import { basicFetch } from '@utils/fetch';
-import { NextPage } from 'next';
 import Link from 'next/link';
 import { useState } from 'react';
 
-const Create: NextPage = () => {
+const Create: NextPageWithLayout = () => {
   const [destination, setDestination] = useState('');
   const [shortened, setShortened] = useState('');
 
