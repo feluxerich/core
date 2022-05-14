@@ -1,17 +1,17 @@
 import { Button } from '@components/Button';
 import { Input } from '@components/Input';
-import { baseUrl, basicFetch } from '@utils/fetch';
-import { GetServerSideProps } from 'next';
+import { basicFetch } from '@utils/fetch';
+import { NextPage } from 'next';
 import Link from 'next/link';
 import { useState } from 'react';
 
-const Create = (req: any) => {
+const Create: NextPage = () => {
   const [destination, setDestination] = useState('');
   const [shortened, setShortened] = useState('');
 
   const create = async (e: any) => {
     e.preventDefault();
-    const resp = await basicFetch('/api/shortener/create', {
+    const resp = await basicFetch('/api/shortener', {
       method: 'POST',
       body: JSON.stringify({
         dest: destination,

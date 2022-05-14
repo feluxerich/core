@@ -2,10 +2,11 @@ import { GetServerSideProps } from 'next';
 import Full from '@components/Full';
 import { Spinner } from '@components/Spinner';
 import shortener from '@utils/api/shortener/main';
+import { NextPageWithLayout } from '@components/Layout/LayoutTypes';
 
-const Alias = () => {
+const Alias: NextPageWithLayout = () => {
   return (
-    <Full className="flex justify-center items-center">
+    <Full className="flex items-center justify-center">
       <div className="flex flex-col items-center">
         <Spinner size="6" />
         <p className="mt-3 text-sm">Redirecting...</p>
