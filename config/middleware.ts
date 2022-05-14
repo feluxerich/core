@@ -1,5 +1,5 @@
 export const middleware = {
-  restricted: ['/', '/embed/[url]'],
+  open: ['/login', '/signup', '/l/[alias]'],
 };
 
 export default middleware;

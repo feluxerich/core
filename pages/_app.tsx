@@ -1,6 +1,3 @@
-import type { AppProps } from 'next/app';
-import type { NextPage } from 'next';
-
 import 'nprogress/nprogress.css';
 import 'react-toastify/dist/ReactToastify.css';
 import 'tailwindcss/tailwind.css';
@@ -15,28 +12,20 @@ import { Router } from 'next/router';
 import { NextSeo } from 'next-seo';
 
 import { QueryClient, QueryClientProvider } from 'react-query';
-import { ReactQueryDevtools } from 'react-query/devtools'
+import { ReactQueryDevtools } from 'react-query/devtools';
 import { QueryProvider } from '@context/useQuery';
 
 import Layout from '@components/Layout';
 import Fragment from '@components/Fragment';
 
 import nProgress from 'nprogress';
+import { AppPropsWithLayout } from '@components/Layout/LayoutTypes';
 
 nProgress.configure({ showSpinner: false });
 
 Router.events.on('routeChangeStart', () => nProgress.start());
 Router.events.on('routeChangeComplete', () => nProgress.done());
 Router.events.on('routeChangeError', () => nProgress.done());
-
-type NextPageWithLayout = NextPage & {
-  noLayout?: boolean;
-  center?: boolean;
-};
-
-type AppPropsWithLayout = AppProps & {
-  Component: NextPageWithLayout;
-};
 
 const queryClient = new QueryClient();
 
