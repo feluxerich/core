@@ -5,7 +5,7 @@ import { useRouter } from 'next/dist/client/router';
 import { createRef, useState } from 'react';
 import Link from 'next/link';
 
-const Login = () => {
+const Login = ({ nextPage }: any) => {
   const [errorUsername, setErrorUsername] = useState(false);
   const [errorPassword, setErrorPassword] = useState(false);
   const [swiggle1, setSwiggle1] = useState('');
@@ -18,7 +18,7 @@ const Login = () => {
   const Router = useRouter();
 
   const handleSubmit = (e: any) => {
-    e.preventDefault()
+    e.preventDefault();
     if (!usernameRef.current || !passwordRef.current) return;
     setErrorUsername(false);
     setErrorPassword(false);
@@ -41,7 +41,7 @@ const Login = () => {
           setErrorUsername(true);
           setErrorPassword(true);
         } else {
-          Router.push('/');
+          Router.push(nextPage);
         }
 
         setDisabled(false);
