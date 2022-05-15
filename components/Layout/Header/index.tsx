@@ -1,6 +1,5 @@
 import { useUser } from 'hooks/useUser';
 import Image from 'next/image';
-import { IoNotifications } from 'react-icons/io5';
 import { Input } from './Input';
 import Logo from '@assets/svg/logo.svg';
 import Notifications from './Notifications';
@@ -10,23 +9,25 @@ const Header = () => {
   const user = useUser();
 
   return (
-    <div className="fixed z-20 top-0 left-0 right-0 w-full bg-primary-900">
-      <div className="w-full px-11 py-5 flex justify-between items-center">
+    <div className="fixed top-0 left-0 right-0 z-20 w-full bg-primary-900">
+      <div className="flex items-center justify-between w-full py-5 px-11">
         <Link href="/">
-          <a className="w-full max-w-screen-fxs items-center flex">
+          <a className="flex items-center w-full max-w-screen-fxs">
             <Logo className="mr-2" />
-            <span className="text-base font-bold text-accent leading-4">Core</span>
+            <span className="text-base font-bold leading-4 text-accent">Core</span>
           </a>
         </Link>
 
         <div className="w-full max-w-screen-fmd">
           <Input className="w-full" placeholder="Search for app name, language or tags" />
         </div>
-        <div className="w-full max-w-screen-fsm flex justify-end">
+        <div className="flex justify-end w-full max-w-screen-fsm">
           <div className="flex items-center">
             <Notifications />
-            <div className="ml-5 w-8 aspect-square rounded overflow-hidden cursor-pointer">
-              {user?.avatar ? <Image src={user?.avatar} alt=" " height={40} width={40} /> : <div className="h-full w-full bg-primary-700"></div>}
+            <div className="w-8 ml-5 overflow-hidden rounded cursor-pointer aspect-square">
+              <Link href={'/account/auth'} passHref>
+                {user?.avatar ? <Image src={user?.avatar} alt=" " height={40} width={40} /> : <div className="w-full h-full bg-primary-700"></div>}
+              </Link>
             </div>
           </div>
         </div>
