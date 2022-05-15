@@ -49,7 +49,8 @@ class Database {
   }
 
   async appendEntries(alias: string, entry: EntryProps) {
-    return await this.schema.updateOne({ alias }, { $push: { todoEntries: entry } });
+    await this.schema.updateOne({ alias }, { $push: { todoEntries: entry } });
+    return await this.findOne(alias);
   }
 
   async check(alias: string, content: string) {
@@ -57,9 +58,11 @@ class Database {
 
     const todoEntry = todo.todoEntries.find((element: any) => element.content === content);
     if (todoEntry.checked) {
-      return await this.schema.updateOne({ alias, 'todoEntries.content': content }, { $set: { 'todoEntries.$.checked': false } });
+      await this.schema.updateOne({ alias, 'todoEntries.content': content }, { $set: { 'todoEntries.$.checked': false } });
+      return await this.findOne(alias);
     }
-    return await this.schema.updateOne({ alias, 'todoEntries.content': content }, { $set: { 'todoEntries.$.checked': true } });
+    await this.schema.updateOne({ alias, 'todoEntries.content': content }, { $set: { 'todoEntries.$.checked': true } });
+    return await this.findOne(alias);
   }
 }
 

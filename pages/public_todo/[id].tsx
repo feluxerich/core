@@ -8,36 +8,46 @@ import { IoCheckboxOutline, IoCheckbox } from 'react-icons/io5';
 
 const PublicTodo: NextPageWithLayout = ({ todo }: any) => {
   const [newTodo, setNewTodo] = useState('');
+  const [localTodo, setLocalTodo] = useState(todo);
 
   const submit = async (e: any) => {
     e.preventDefault();
-    await basicFetch('/api/public_todo/append', {
-      method: 'POST',
-      body: JSON.stringify({
-        alias: todo.alias,
-        entry: {
-          content: newTodo,
-          checked: false,
-        },
-      }),
-    });
+    setNewTodo('');
+    setLocalTodo(
+      (
+        await basicFetch('/api/public_todo/append', {
+          method: 'POST',
+          body: JSON.stringify({
+            alias: todo.alias,
+            entry: {
+              content: newTodo,
+              checked: false,
+            },
+          }),
+        })
+      ).resp,
+    );
   };
 
   const check = async (content: string) => {
-    await basicFetch('/api/public_todo/check', {
-      method: 'POST',
-      body: JSON.stringify({
-        alias: todo.alias,
-        content,
-      }),
-    });
+    setLocalTodo(
+      (
+        await basicFetch('/api/public_todo/check', {
+          method: 'POST',
+          body: JSON.stringify({
+            alias: todo.alias,
+            content,
+          }),
+        })
+      ).resp,
+    );
   };
 
   return (
     <div className="w-full text-center">
       <span className="text-2xl font-bold">{todo?.title}</span>
-      <ul className="grid grid-flow-row gap-3 mt-5 text-left">
-        {todo.todoEntries.map((e: any) => (
+      <ul className="grid grid-flow-row gap-3 mt-5 overflow-y-scroll text-left">
+        {localTodo.todoEntries.map((e: any) => (
           <li key={e.alias} className="flex flex-row items-center p-2 bg-primary-800 rounded-5">
             {e.checked ? (
               <IoCheckbox className="text-lg text-green-600" onClick={() => check(e.content)} />

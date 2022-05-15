@@ -38,7 +38,7 @@ class Todo {
   }
 
   async check(alias: string, content: string) {
-    await database.check(alias, content);
+    return await database.check(alias, content);
   }
 }
 
