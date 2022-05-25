@@ -3,7 +3,7 @@ import config from '@config/middleware';
 import { verifyAuth } from '@utils/api/core/worker';
 
 export async function middleware(req: NextRequest) {
-  if (!(!req.page.name || config.open.includes(req.page.name) || req.page.name.startsWith('/api'))) return;
+  if (!req.page.name || config.open.includes(req.page.name) || req.page.name.startsWith('/api')) return;
   const [verified, error, jwt] = await verifyAuth(req);
 
   if (error) {
